@@ -6,7 +6,7 @@ ground = None
 sliding = True
 running = True
 Go = False
-air = True
+air = False
 
 #게임 오브젝트 클래스의 정의
 class BackGround:
@@ -45,7 +45,6 @@ class Change:
     def __init__(self):
          self.x, self.y = 2000, 390
          self.frame, self.count, self.round_count = 0, 0, 0
-         # frame = 0, 6, 12, 18
          self.image = load_image('Item\\change.png')
     def update(self):
          global Go
@@ -58,6 +57,7 @@ class Change:
          self.image.clip_draw(300, 0, 150, 300, self.x - 20, self.y, 75, 150)
     def draw(self):
          self.image.clip_draw(0, 0, 150, 300, self.x, self.y, 75, 150)
+
 
 
 class Airplane:
@@ -77,7 +77,7 @@ class Airplane:
                     self.round_count_up = 0
                 self.round_count_up += 1
             self.y = min(600, self.y - self.a)
-            self.a = min(5, self.a + 0.2)
+            self.a = min(5, self.a + 0.5)
         else:
             if (self.round_count_down < 2):
                 if (self.round_count_down == 1):
@@ -90,6 +90,7 @@ class Airplane:
             self.up = True
         elif event.type == SDL_MOUSEBUTTONUP:
             self.up = False
+            self.a = 0
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
 
