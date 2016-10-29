@@ -58,7 +58,7 @@ class Change:
     def draw(self):
          self.image.clip_draw(0, 0, 150, 300, self.x, self.y, 75, 150)
 
-
+class Obstacles:
 
 class Airplane:
     def __init__(self):

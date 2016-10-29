@@ -26,15 +26,15 @@
       <file leaf-file-name="polargeist.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/polargeist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1385">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#155#619#0" expanded="false" />
                 <element signature="e#639#1203#0" expanded="false" />
                 <element signature="e#1223#1733#0" expanded="false" />
-                <element signature="e#1757#2993#0" expanded="false" />
-                <element signature="e#4787#5179#0" expanded="false" />
+                <element signature="e#1773#3009#0" expanded="false" />
+                <element signature="e#4803#5195#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="adjust_run_and_action.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/test/Lab08 - Time/adjust_run_and_action.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="2275">
               <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
               <folding />
             </state>
@@ -86,11 +86,11 @@
         <option value="C:/test/Lab06 - AI/ai_boy_IQ10.py" />
         <option value="C:/test/Lab01/character_moves.py" />
         <option value="C:/test/Lab07 - Character Controller/hero_controller.py" />
-        <option value="$PROJECT_DIR$/polargeist.py" />
         <option value="C:/test/Lab07 - Character Controller/json_players.py" />
         <option value="C:/test/Lab07 - Character Controller/team_data.txt" />
         <option value="C:/test/Lab08 - Time/get_frame_time_rate.py" />
         <option value="C:/test/Lab08 - Time/adjust_run_and_action.py" />
+        <option value="$PROJECT_DIR$/polargeist.py" />
       </list>
     </option>
   </component>
@@ -124,6 +124,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -137,10 +141,6 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane />
       </pane>
     </panes>
   </component>
@@ -402,7 +402,7 @@
     <frame x="913" y="0" width="1015" height="1088" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18491736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18491736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -516,8 +516,8 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1757#2993#0" expanded="false" />
-            <element signature="e#4787#5179#0" expanded="false" />
+            <element signature="e#1773#3009#0" expanded="false" />
+            <element signature="e#4803#5195#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -580,8 +580,8 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1757#2993#0" expanded="false" />
-            <element signature="e#4787#5179#0" expanded="false" />
+            <element signature="e#1773#3009#0" expanded="false" />
+            <element signature="e#4803#5195#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -609,8 +609,8 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1757#2993#0" expanded="false" />
-            <element signature="e#4787#5179#0" expanded="false" />
+            <element signature="e#1773#3009#0" expanded="false" />
+            <element signature="e#4803#5195#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -638,8 +638,8 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1757#2993#0" expanded="false" />
-            <element signature="e#4787#5179#0" expanded="false" />
+            <element signature="e#1773#3009#0" expanded="false" />
+            <element signature="e#4803#5195#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -667,8 +667,8 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1757#2993#0" expanded="false" />
-            <element signature="e#4787#5179#0" expanded="false" />
+            <element signature="e#1773#3009#0" expanded="false" />
+            <element signature="e#4803#5195#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -844,7 +844,7 @@
     </entry>
     <entry file="file://C:/test/Lab08 - Time/adjust_run_and_action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
+        <state relative-caret-position="2275">
           <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
           <folding />
         </state>
@@ -852,15 +852,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/polargeist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1385">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1757#2993#0" expanded="false" />
-            <element signature="e#4787#5179#0" expanded="false" />
+            <element signature="e#1773#3009#0" expanded="false" />
+            <element signature="e#4803#5195#0" expanded="false" />
           </folding>
         </state>
       </provider>
