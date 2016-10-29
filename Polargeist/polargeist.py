@@ -58,8 +58,6 @@ class Change:
     def draw(self):
          self.image.clip_draw(0, 0, 150, 300, self.x, self.y, 75, 150)
 
-class Obstacles:
-
 class Airplane:
     def __init__(self):
         self.x, self.y = 200, 215
@@ -95,7 +93,7 @@ class Airplane:
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
 
 class Soldier:
-    global sliding, move
+    global sliding
     def __init__(self):
         self.x, self.y = 0, 215
         self.frame, self.count, self.round_count = 0, 0, 0
@@ -139,6 +137,8 @@ class Soldier:
     def draw(self):
         self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y, 90, 90)
 
+
+
 # 초기화 코드
 def enter():
     global ground, soldier, back, airplane, change_in
@@ -163,6 +163,28 @@ def handle_events():
                 soldier.handle_event(event)
             else:
                 airplane.handle_event(event)
+
+def create_obstacles():
+    obstacles_state_table = {
+        "LEFT_RUN": Boy.LEFT_RUN,
+        "RIGHT_RUN": Boy.RIGHT_RUN,
+        "LEFT_STAND": Boy.LEFT_STAND,
+        "RIGHT_STAND": Boy.RIGHT_STAND
+    }
+    obstacles_data_file = open('obstacles_data.txt', 'r')
+    obstacles_data = json.load(obstacles_data_file)
+    obstacles_data_file.close()
+
+    obstacles = []
+    for name in obstacles_data:
+        obstacle = Boy()
+        obstacle.name = name
+        obstacle.x = obstacles_data[name]['x']
+        obstacle.y = obstacles_data[name]['y']
+        obstacle.state = obstacles_state_table[obstacles_data[name]['StartState']]
+        obstacles.append(obstacle)
+
+    return obstacles
 
 
 #게임 루프 코드

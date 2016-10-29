@@ -26,25 +26,26 @@
       <file leaf-file-name="polargeist.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/polargeist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+            <state relative-caret-position="93">
+              <caret line="178" column="31" selection-start-line="178" selection-start-column="31" selection-end-line="178" selection-end-column="31" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#155#619#0" expanded="false" />
                 <element signature="e#639#1203#0" expanded="false" />
                 <element signature="e#1223#1733#0" expanded="false" />
-                <element signature="e#1773#3009#0" expanded="false" />
-                <element signature="e#4803#5195#0" expanded="false" />
+                <element signature="e#1755#2991#0" expanded="false" />
+                <element signature="e#4550#4747#0" expanded="false" />
+                <element signature="e#4781#5170#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get_frame_time_rate.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/test/Lab08 - Time/get_frame_time_rate.py">
+      <file leaf-file-name="json_players.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/test/Lab07 - Character Controller/json_players.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3825">
-              <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
+            <state relative-caret-position="418">
+              <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -53,8 +54,8 @@
       <file leaf-file-name="adjust_run_and_action.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/test/Lab08 - Time/adjust_run_and_action.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2275">
-              <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+            <state relative-caret-position="-1407">
+              <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -95,8 +96,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="913" />
-    <option name="width" value="1015" />
+    <option name="x" value="926" />
+    <option name="width" value="1002" />
     <option name="height" value="1088" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -124,10 +125,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -142,13 +139,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/test/Lab08 - Time/adjust_run_and_action.py" />
+    <property name="last_opened_file_path" value="C:/test/Lab07 - Character Controller/json_players.py" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/송유신/AppData/Local/Programs/Python/Python35/Lib/site-packages/pico2d.py" />
   </component>
-  <component name="RunManager" selected="Python.adjust_run_and_action">
+  <component name="RunManager" selected="Python.polargeist">
     <configuration default="false" name="polargeist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -377,10 +378,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.adjust_run_and_action" />
-        <item index="1" class="java.lang.String" itemvalue="Python.get_frame_time_rate" />
-        <item index="2" class="java.lang.String" itemvalue="Python.json_players" />
-        <item index="3" class="java.lang.String" itemvalue="Python.polargeist" />
+        <item index="0" class="java.lang.String" itemvalue="Python.polargeist" />
+        <item index="1" class="java.lang.String" itemvalue="Python.adjust_run_and_action" />
+        <item index="2" class="java.lang.String" itemvalue="Python.get_frame_time_rate" />
+        <item index="3" class="java.lang.String" itemvalue="Python.json_players" />
         <item index="4" class="java.lang.String" itemvalue="Python.hero_controller" />
       </list>
     </recent_temporary>
@@ -399,26 +400,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="913" y="0" width="1015" height="1088" extended-state="0" />
+    <frame x="926" y="0" width="1002" height="1088" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18491736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18743455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21343446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3954984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21343446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3954984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -453,18 +454,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/polargeist_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/test/Lab05/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2300">
@@ -516,8 +510,9 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1773#3009#0" expanded="false" />
-            <element signature="e#4803#5195#0" expanded="false" />
+            <element signature="e#1755#2991#0" expanded="false" />
+            <element signature="e#4550#4747#0" expanded="false" />
+            <element signature="e#4781#5170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -580,8 +575,9 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1773#3009#0" expanded="false" />
-            <element signature="e#4803#5195#0" expanded="false" />
+            <element signature="e#1755#2991#0" expanded="false" />
+            <element signature="e#4550#4747#0" expanded="false" />
+            <element signature="e#4781#5170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -609,8 +605,9 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1773#3009#0" expanded="false" />
-            <element signature="e#4803#5195#0" expanded="false" />
+            <element signature="e#1755#2991#0" expanded="false" />
+            <element signature="e#4550#4747#0" expanded="false" />
+            <element signature="e#4781#5170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -638,8 +635,9 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1773#3009#0" expanded="false" />
-            <element signature="e#4803#5195#0" expanded="false" />
+            <element signature="e#1755#2991#0" expanded="false" />
+            <element signature="e#4550#4747#0" expanded="false" />
+            <element signature="e#4781#5170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -667,8 +665,9 @@
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1773#3009#0" expanded="false" />
-            <element signature="e#4803#5195#0" expanded="false" />
+            <element signature="e#1755#2991#0" expanded="false" />
+            <element signature="e#4550#4747#0" expanded="false" />
+            <element signature="e#4781#5170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -813,13 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/test/Lab07 - Character Controller/hero_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1775">
-          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/test/Lab07 - Character Controller/team_data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -827,16 +819,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/test/Lab07 - Character Controller/json_players.py">
+    <entry file="file://$PROJECT_DIR$/strat_data.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="110" column="72" selection-start-line="110" selection-start-column="72" selection-end-line="110" selection-end-column="72" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/test/Lab07 - Character Controller/hero_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/test/Lab08 - Time/get_frame_time_rate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3825">
+        <state relative-caret-position="840">
           <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
           <folding />
         </state>
@@ -844,23 +845,32 @@
     </entry>
     <entry file="file://C:/test/Lab08 - Time/adjust_run_and_action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2275">
-          <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+        <state relative-caret-position="-1407">
+          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/test/Lab07 - Character Controller/json_players.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/polargeist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+        <state relative-caret-position="93">
+          <caret line="178" column="31" selection-start-line="178" selection-start-column="31" selection-end-line="178" selection-end-column="31" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#155#619#0" expanded="false" />
             <element signature="e#639#1203#0" expanded="false" />
             <element signature="e#1223#1733#0" expanded="false" />
-            <element signature="e#1773#3009#0" expanded="false" />
-            <element signature="e#4803#5195#0" expanded="false" />
+            <element signature="e#1755#2991#0" expanded="false" />
+            <element signature="e#4550#4747#0" expanded="false" />
+            <element signature="e#4781#5170#0" expanded="false" />
           </folding>
         </state>
       </provider>
