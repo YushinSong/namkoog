@@ -12,7 +12,7 @@ air = False
 class BackGround:
     def __init__(self):
         self.x = 550
-        self.image = load_image('Ground\\background2.png')
+        self.image = load_image('Ground\\background.png')
         self.blue = load_image('Ground\\background_blue.png')
     def update(self):
         global Go
@@ -27,7 +27,7 @@ class BackGround:
 class Ground:
     def __init__(self):
         self.x = 900
-        self.image = load_image('Ground\\ground2.png')
+        self.image = load_image('Ground\\ground.png')
         self.line = load_image('Ground\\line.png')
         self.blue = load_image('Ground\\ground_blue.png')
     def update(self):
@@ -57,6 +57,22 @@ class Change:
          self.image.clip_draw(300, 0, 150, 300, self.x - 20, self.y, 75, 150)
     def draw(self):
          self.image.clip_draw(0, 0, 150, 300, self.x, self.y, 75, 150)
+
+class Obstacle:
+    SQUARE, TRIANGLE = 0, 1
+
+    def __init__(self):
+        self.x, self.y = 0, 0
+        self.image = load_image('Ground\\obstacle.png')
+    def square(self):
+        self.frame, self.state = 0, 0
+    def update(self):
+        global Go
+        if Go == True:
+            self.x -= 10
+    def draw(self):
+        self.image.clip_draw(self.frame, self.state, 100, 100, self.x, self.y, 90, 90)
+
 
 class Airplane:
     def __init__(self):
@@ -137,8 +153,6 @@ class Soldier:
     def draw(self):
         self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y, 90, 90)
 
-
-
 # 초기화 코드
 def enter():
     global ground, soldier, back, airplane, change_in
@@ -166,10 +180,8 @@ def handle_events():
 
 def create_obstacles():
     obstacles_state_table = {
-        "LEFT_RUN": Boy.LEFT_RUN,
-        "RIGHT_RUN": Boy.RIGHT_RUN,
-        "LEFT_STAND": Boy.LEFT_STAND,
-        "RIGHT_STAND": Boy.RIGHT_STAND
+        "SQUARE": Obstacle.SQUARE,
+        "TRIANGLE": Obstacle.TRIANGLE
     }
     obstacles_data_file = open('obstacles_data.txt', 'r')
     obstacles_data = json.load(obstacles_data_file)
@@ -177,7 +189,7 @@ def create_obstacles():
 
     obstacles = []
     for name in obstacles_data:
-        obstacle = Boy()
+        obstacle = Obstacle()
         obstacle.name = name
         obstacle.x = obstacles_data[name]['x']
         obstacle.y = obstacles_data[name]['y']
@@ -189,10 +201,14 @@ def create_obstacles():
 
 #게임 루프 코드
 enter()
+obstacle = create_obstacles()
 while running:
     handle_events()
 
     clear_canvas()
+
+    for ob in obstacle:
+        ob.update()
 
     if air == False:
         soldier.update()
@@ -209,6 +225,8 @@ while running:
         soldier.draw()
     else:
         airplane.draw()
+    for ob in obstacle:
+        ob.draw()
     #change_in.draw()
     update_canvas()
 
