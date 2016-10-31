@@ -26,17 +26,17 @@
       <file leaf-file-name="polargeist.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/polargeist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1076">
-              <caret line="196" column="22" selection-start-line="196" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
+            <state relative-caret-position="300">
+              <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#155#618#0" expanded="false" />
                 <element signature="e#638#1201#0" expanded="false" />
                 <element signature="e#1221#1731#0" expanded="false" />
-                <element signature="e#2165#3401#0" expanded="false" />
-                <element signature="e#3422#4932#0" expanded="false" />
-                <element signature="e#4958#5155#0" expanded="false" />
-                <element signature="e#5189#5578#0" expanded="false" />
+                <element signature="e#2257#3493#0" expanded="false" />
+                <element signature="e#3514#5024#0" expanded="false" />
+                <element signature="e#5050#5247#0" expanded="false" />
+                <element signature="e#5281#5670#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -65,8 +65,8 @@
       <file leaf-file-name="json_players.py" pinned="false" current-in-tab="true">
         <entry file="file://C:/test/Lab07 - Character Controller/json_players.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="110" column="15" selection-start-line="110" selection-start-column="15" selection-end-line="110" selection-end-column="15" />
+            <state relative-caret-position="128">
+              <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -108,9 +108,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="926" />
-    <option name="width" value="1002" />
-    <option name="height" value="1088" />
+    <option name="x" value="69" />
+    <option name="y" value="-9" />
+    <option name="width" value="1860" />
+    <option name="height" value="1098" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -137,6 +138,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -150,10 +155,6 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane />
       </pane>
     </panes>
   </component>
@@ -391,9 +392,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.polargeist" />
-        <item index="1" class="java.lang.String" itemvalue="Python.adjust_run_and_action" />
-        <item index="2" class="java.lang.String" itemvalue="Python.get_frame_time_rate" />
-        <item index="3" class="java.lang.String" itemvalue="Python.json_players" />
+        <item index="1" class="java.lang.String" itemvalue="Python.json_players" />
+        <item index="2" class="java.lang.String" itemvalue="Python.adjust_run_and_action" />
+        <item index="3" class="java.lang.String" itemvalue="Python.get_frame_time_rate" />
         <item index="4" class="java.lang.String" itemvalue="Python.hero_controller" />
       </list>
     </recent_temporary>
@@ -412,15 +413,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="926" y="0" width="1002" height="1088" extended-state="0" />
-    <editor active="true" />
+    <frame x="69" y="-9" width="1860" height="1098" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18743455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09873138" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21343446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21114683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -515,10 +516,10 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2165#3401#0" expanded="false" />
-            <element signature="e#3422#4932#0" expanded="false" />
-            <element signature="e#4958#5155#0" expanded="false" />
-            <element signature="e#5189#5578#0" expanded="false" />
+            <element signature="e#2257#3493#0" expanded="false" />
+            <element signature="e#3514#5024#0" expanded="false" />
+            <element signature="e#5050#5247#0" expanded="false" />
+            <element signature="e#5281#5670#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -581,10 +582,10 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2165#3401#0" expanded="false" />
-            <element signature="e#3422#4932#0" expanded="false" />
-            <element signature="e#4958#5155#0" expanded="false" />
-            <element signature="e#5189#5578#0" expanded="false" />
+            <element signature="e#2257#3493#0" expanded="false" />
+            <element signature="e#3514#5024#0" expanded="false" />
+            <element signature="e#5050#5247#0" expanded="false" />
+            <element signature="e#5281#5670#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -612,10 +613,10 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2165#3401#0" expanded="false" />
-            <element signature="e#3422#4932#0" expanded="false" />
-            <element signature="e#4958#5155#0" expanded="false" />
-            <element signature="e#5189#5578#0" expanded="false" />
+            <element signature="e#2257#3493#0" expanded="false" />
+            <element signature="e#3514#5024#0" expanded="false" />
+            <element signature="e#5050#5247#0" expanded="false" />
+            <element signature="e#5281#5670#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -643,10 +644,10 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2165#3401#0" expanded="false" />
-            <element signature="e#3422#4932#0" expanded="false" />
-            <element signature="e#4958#5155#0" expanded="false" />
-            <element signature="e#5189#5578#0" expanded="false" />
+            <element signature="e#2257#3493#0" expanded="false" />
+            <element signature="e#3514#5024#0" expanded="false" />
+            <element signature="e#5050#5247#0" expanded="false" />
+            <element signature="e#5281#5670#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -674,10 +675,10 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2165#3401#0" expanded="false" />
-            <element signature="e#3422#4932#0" expanded="false" />
-            <element signature="e#4958#5155#0" expanded="false" />
-            <element signature="e#5189#5578#0" expanded="false" />
+            <element signature="e#2257#3493#0" expanded="false" />
+            <element signature="e#3514#5024#0" expanded="false" />
+            <element signature="e#5050#5247#0" expanded="false" />
+            <element signature="e#5281#5670#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -847,7 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
           <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -859,6 +859,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/polargeist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#155#618#0" expanded="false" />
+            <element signature="e#638#1201#0" expanded="false" />
+            <element signature="e#1221#1731#0" expanded="false" />
+            <element signature="e#2257#3493#0" expanded="false" />
+            <element signature="e#3514#5024#0" expanded="false" />
+            <element signature="e#5050#5247#0" expanded="false" />
+            <element signature="e#5281#5670#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://C:/test/Lab07 - Character Controller/team_data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -867,27 +884,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/polargeist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1076">
-          <caret line="196" column="22" selection-start-line="196" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#155#618#0" expanded="false" />
-            <element signature="e#638#1201#0" expanded="false" />
-            <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2165#3401#0" expanded="false" />
-            <element signature="e#3422#4932#0" expanded="false" />
-            <element signature="e#4958#5155#0" expanded="false" />
-            <element signature="e#5189#5578#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/test/Lab07 - Character Controller/json_players.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="110" column="15" selection-start-line="110" selection-start-column="15" selection-end-line="110" selection-end-column="15" />
+        <state relative-caret-position="128">
+          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
           <folding />
         </state>
       </provider>

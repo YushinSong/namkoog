@@ -63,9 +63,15 @@ class Obstacle:
 
     def __init__(self):
         self.x, self.y = 0, 0
-        self.image = load_image('Ground\\obstacle.png')
-    def square(self):
         self.frame, self.state = 0, 0
+        self.image = load_image('Ground\\obstacle.png')
+
+    handle_state = {
+        SQUARE: square
+    }
+
+    def square(self):
+        self.frame, self.state = 0, 400
     def update(self):
         global Go
         if Go == True:
@@ -181,9 +187,9 @@ def handle_events():
 def create_obstacles():
     obstacles_state_table = {
         "SQUARE": Obstacle.SQUARE,
-        "TRIANGLE": Obstacle.TRIANGLE
+        #"TRIANGLE": Obstacle.TRIANGLE
     }
-    obstacles_data_file = open('obstacles_data.txt', 'r')
+    obstacles_data_file = open('obstacle_data.txt', 'r')
     obstacles_data = json.load(obstacles_data_file)
     obstacles_data_file.close()
 
@@ -193,7 +199,7 @@ def create_obstacles():
         obstacle.name = name
         obstacle.x = obstacles_data[name]['x']
         obstacle.y = obstacles_data[name]['y']
-        obstacle.state = obstacles_state_table[obstacles_data[name]['StartState']]
+        obstacle.shape = obstacles_state_table[obstacles_data[name]['StartState']]
         obstacles.append(obstacle)
 
     return obstacles
