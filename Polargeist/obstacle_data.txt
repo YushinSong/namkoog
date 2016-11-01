@@ -1,5 +1,7 @@
 {
-    "Square001" : {"StartState":"SQUARE", "x":200, "y":215}
+    "Square001" : {"StartState":"SQUARE", "x":200, "y":205},
+    "Square00d1" : {"StartState":"TRIANGLE", "x":200, "y":205},
+    "Square0d01" : {"StartState":"SPIKE", "x":502, "y":170}
 }
 
 

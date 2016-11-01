@@ -23,30 +23,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="polargeist.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="polargeist.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/polargeist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+            <state relative-caret-position="1625">
+              <caret line="183" column="12" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="12" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#155#618#0" expanded="false" />
                 <element signature="e#638#1201#0" expanded="false" />
                 <element signature="e#1221#1731#0" expanded="false" />
-                <element signature="e#2257#3493#0" expanded="false" />
-                <element signature="e#3514#5024#0" expanded="false" />
-                <element signature="e#5050#5247#0" expanded="false" />
-                <element signature="e#5281#5670#0" expanded="false" />
+                <element signature="e#3050#4286#0" expanded="false" />
+                <element signature="e#4307#5817#0" expanded="false" />
+                <element signature="e#6074#6463#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="obstacle_data.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obstacle_data.txt">
+      <file leaf-file-name="boy_grass_object.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/test/Lab04/boy_grass_object.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+            <state relative-caret-position="150">
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="json_players.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/test/Lab07 - Character Controller/json_players.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-947">
+              <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -62,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="json_players.py" pinned="false" current-in-tab="true">
-        <entry file="file://C:/test/Lab07 - Character Controller/json_players.py">
+      <file leaf-file-name="obstacle_data.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obstacle_data.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+            <state relative-caret-position="75">
+              <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -102,16 +113,15 @@
         <option value="C:/test/Lab08 - Time/get_frame_time_rate.py" />
         <option value="C:/test/Lab08 - Time/adjust_run_and_action.py" />
         <option value="C:/test/Lab07 - Character Controller/json_players.py" />
-        <option value="$PROJECT_DIR$/obstacle_data.txt" />
         <option value="$PROJECT_DIR$/polargeist.py" />
+        <option value="$PROJECT_DIR$/obstacle_data.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="69" />
-    <option name="y" value="-9" />
-    <option name="width" value="1860" />
-    <option name="height" value="1098" />
+    <option name="x" value="670" />
+    <option name="width" value="1250" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -138,10 +148,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane />
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -159,7 +169,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/test/Lab07 - Character Controller/team_data.txt" />
+    <property name="last_opened_file_path" value="C:/test/Lab04/boy_grass_object.py" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/송유신/AppData/Local/Programs/Python/Python35/Lib/site-packages/pico2d.py" />
   </component>
   <component name="RunManager" selected="Python.polargeist">
@@ -176,23 +186,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/polargeist.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="hero_controller" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="C:/test/Lab07 - Character Controller" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Project" />
-      <option name="SCRIPT_NAME" value="C:/test/Lab07 - Character Controller/hero_controller.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -244,6 +237,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project" />
       <option name="SCRIPT_NAME" value="C:/test/Lab08 - Time/adjust_run_and_action.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="boy_grass_object" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="C:/test/Lab04" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Project" />
+      <option name="SCRIPT_NAME" value="C:/test/Lab04/boy_grass_object.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -384,18 +394,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.polargeist" />
-      <item index="1" class="java.lang.String" itemvalue="Python.hero_controller" />
-      <item index="2" class="java.lang.String" itemvalue="Python.json_players" />
-      <item index="3" class="java.lang.String" itemvalue="Python.get_frame_time_rate" />
-      <item index="4" class="java.lang.String" itemvalue="Python.adjust_run_and_action" />
+      <item index="1" class="java.lang.String" itemvalue="Python.json_players" />
+      <item index="2" class="java.lang.String" itemvalue="Python.get_frame_time_rate" />
+      <item index="3" class="java.lang.String" itemvalue="Python.adjust_run_and_action" />
+      <item index="4" class="java.lang.String" itemvalue="Python.boy_grass_object" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.polargeist" />
-        <item index="1" class="java.lang.String" itemvalue="Python.json_players" />
-        <item index="2" class="java.lang.String" itemvalue="Python.adjust_run_and_action" />
-        <item index="3" class="java.lang.String" itemvalue="Python.get_frame_time_rate" />
-        <item index="4" class="java.lang.String" itemvalue="Python.hero_controller" />
+        <item index="1" class="java.lang.String" itemvalue="Python.boy_grass_object" />
+        <item index="2" class="java.lang.String" itemvalue="Python.json_players" />
+        <item index="3" class="java.lang.String" itemvalue="Python.adjust_run_and_action" />
+        <item index="4" class="java.lang.String" itemvalue="Python.get_frame_time_rate" />
       </list>
     </recent_temporary>
   </component>
@@ -413,15 +423,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="69" y="-9" width="1860" height="1098" extended-state="6" />
+    <frame x="670" y="0" width="1250" height="1080" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09873138" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14879468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21114683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21530055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -467,7 +477,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -516,10 +526,9 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2257#3493#0" expanded="false" />
-            <element signature="e#3514#5024#0" expanded="false" />
-            <element signature="e#5050#5247#0" expanded="false" />
-            <element signature="e#5281#5670#0" expanded="false" />
+            <element signature="e#3050#4286#0" expanded="false" />
+            <element signature="e#4307#5817#0" expanded="false" />
+            <element signature="e#6074#6463#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -582,10 +591,9 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2257#3493#0" expanded="false" />
-            <element signature="e#3514#5024#0" expanded="false" />
-            <element signature="e#5050#5247#0" expanded="false" />
-            <element signature="e#5281#5670#0" expanded="false" />
+            <element signature="e#3050#4286#0" expanded="false" />
+            <element signature="e#4307#5817#0" expanded="false" />
+            <element signature="e#6074#6463#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -613,10 +621,9 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2257#3493#0" expanded="false" />
-            <element signature="e#3514#5024#0" expanded="false" />
-            <element signature="e#5050#5247#0" expanded="false" />
-            <element signature="e#5281#5670#0" expanded="false" />
+            <element signature="e#3050#4286#0" expanded="false" />
+            <element signature="e#4307#5817#0" expanded="false" />
+            <element signature="e#6074#6463#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -644,10 +651,9 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2257#3493#0" expanded="false" />
-            <element signature="e#3514#5024#0" expanded="false" />
-            <element signature="e#5050#5247#0" expanded="false" />
-            <element signature="e#5281#5670#0" expanded="false" />
+            <element signature="e#3050#4286#0" expanded="false" />
+            <element signature="e#4307#5817#0" expanded="false" />
+            <element signature="e#6074#6463#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -675,10 +681,9 @@
             <element signature="e#155#618#0" expanded="false" />
             <element signature="e#638#1201#0" expanded="false" />
             <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2257#3493#0" expanded="false" />
-            <element signature="e#3514#5024#0" expanded="false" />
-            <element signature="e#5050#5247#0" expanded="false" />
-            <element signature="e#5281#5670#0" expanded="false" />
+            <element signature="e#3050#4286#0" expanded="false" />
+            <element signature="e#4307#5817#0" expanded="false" />
+            <element signature="e#6074#6463#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -694,13 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/test/Lab04/boy_grass_object.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -851,28 +849,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obstacle_data.txt">
+    <entry file="file://C:/test/Lab07 - Character Controller/json_players.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+        <state relative-caret-position="-947">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/polargeist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#155#618#0" expanded="false" />
-            <element signature="e#638#1201#0" expanded="false" />
-            <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#2257#3493#0" expanded="false" />
-            <element signature="e#3514#5024#0" expanded="false" />
-            <element signature="e#5050#5247#0" expanded="false" />
-            <element signature="e#5281#5670#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -884,11 +865,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/test/Lab07 - Character Controller/json_players.py">
+    <entry file="file://C:/test/Lab04/boy_grass_object.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+        <state relative-caret-position="150">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obstacle_data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polargeist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1625">
+          <caret line="183" column="12" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#155#618#0" expanded="false" />
+            <element signature="e#638#1201#0" expanded="false" />
+            <element signature="e#1221#1731#0" expanded="false" />
+            <element signature="e#3050#4286#0" expanded="false" />
+            <element signature="e#4307#5817#0" expanded="false" />
+            <element signature="e#6074#6463#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

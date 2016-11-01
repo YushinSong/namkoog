@@ -59,25 +59,46 @@ class Change:
          self.image.clip_draw(0, 0, 150, 300, self.x, self.y, 75, 150)
 
 class Obstacle:
-    SQUARE, TRIANGLE = 0, 1
+    SQUARE, TRIANGLE, HALF_SQUARE, SPIKE = 0, 1, 2, 3
 
     def __init__(self):
-        self.x, self.y = 0, 0
-        self.frame, self.state = 0, 0
+        self.number = random.randint(0, 2)
         self.image = load_image('Ground\\obstacle.png')
 
-    handle_state = {
-        SQUARE: square
-    }
-
     def square(self):
-        self.frame, self.state = 0, 400
+        self.frame, self.state = 0, 405
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 70, 70
+
+    def triangle(self):
+        self.frame, self.state = 94, 405
+        self.wid, self.hei, self.rwid, self.rhei  = 95, 95, 70, 70
+
+    def half_square(self):
+        self.frame, self.state = 100, 300
+        self.wid, self.hei, self.rwid, self.rhei  = 95, 95, 70, 70
+
+    def spike(self):
+        if self.number == 0:
+            self.frame, self.state = 400, 330
+        elif self.number == 1:
+            self.frame, self.state = 400, 250
+        else:
+            self.frame, self.state = 400, 162
+        self.wid, self.hei, self.rwid, self.rhei  = 110, 70, 72, 45
+
+    handle_state = {
+        SQUARE: square,
+        TRIANGLE: triangle,
+        HALF_SQUARE: half_square,
+        SPIKE: spike
+    }
     def update(self):
         global Go
-        if Go == True:
-            self.x -= 10
+        #if Go == True:
+        #    self.x -= 10
+        self.handle_state[self.shape](self)
     def draw(self):
-        self.image.clip_draw(self.frame, self.state, 100, 100, self.x, self.y, 90, 90)
+        self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
 
 
 class Airplane:
@@ -185,24 +206,26 @@ def handle_events():
                 airplane.handle_event(event)
 
 def create_obstacles():
-    obstacles_state_table = {
+    obstacle_state_table = {
         "SQUARE": Obstacle.SQUARE,
-        #"TRIANGLE": Obstacle.TRIANGLE
+        "TRIANGLE": Obstacle.TRIANGLE,
+        "HALF_SQUARE": Obstacle.HALF_SQUARE,
+        "SPIKE": Obstacle.SPIKE
     }
-    obstacles_data_file = open('obstacle_data.txt', 'r')
-    obstacles_data = json.load(obstacles_data_file)
-    obstacles_data_file.close()
+    obstacle_data_file = open('obstacle_data.txt', 'r')
+    obstacle_data = json.load(obstacle_data_file)
+    obstacle_data_file.close()
 
-    obstacles = []
-    for name in obstacles_data:
-        obstacle = Obstacle()
-        obstacle.name = name
-        obstacle.x = obstacles_data[name]['x']
-        obstacle.y = obstacles_data[name]['y']
-        obstacle.shape = obstacles_state_table[obstacles_data[name]['StartState']]
-        obstacles.append(obstacle)
+    obstacle = []
+    for name in obstacle_data:
+        ob = Obstacle()
+        ob.name = name
+        ob.x = obstacle_data[name]['x']
+        ob.y = obstacle_data[name]['y']
+        ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
+        obstacle.append(ob)
 
-    return obstacles
+    return obstacle
 
 
 #게임 루프 코드
@@ -225,14 +248,14 @@ while running:
     change_in.update()
 
     back.draw()
-    ground.draw()
     #change_in.back_draw()
+    for ob in obstacle:
+        ob.draw()
+    ground.draw()
     if air == False:
         soldier.draw()
     else:
         airplane.draw()
-    for ob in obstacle:
-        ob.draw()
     #change_in.draw()
     update_canvas()
 
