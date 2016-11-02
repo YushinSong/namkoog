@@ -94,8 +94,8 @@ class Obstacle:
     }
     def update(self):
         global Go
-        #if Go == True:
-        #    self.x -= 10
+        if Go == True:
+            self.x -= 10
         self.handle_state[self.shape](self)
     def draw(self):
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
