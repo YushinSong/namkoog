@@ -26,16 +26,16 @@
       <file leaf-file-name="polargeist.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/polargeist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1179">
-              <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+            <state relative-caret-position="418">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#155#618#0" expanded="false" />
-                <element signature="e#638#1201#0" expanded="false" />
-                <element signature="e#1221#1731#0" expanded="false" />
-                <element signature="e#3048#4284#0" expanded="false" />
-                <element signature="e#4305#5815#0" expanded="false" />
-                <element signature="e#6072#6461#0" expanded="false" />
+                <element signature="e#746#1309#0" expanded="false" />
+                <element signature="e#1329#1839#0" expanded="false" />
+                <element signature="e#1861#3133#0" expanded="false" />
+                <element signature="e#3156#4392#0" expanded="false" />
+                <element signature="e#4413#5923#0" expanded="false" />
+                <element signature="e#6180#6569#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -54,7 +54,7 @@
       <file leaf-file-name="adjust_run_and_action.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/test/Lab08 - Time/adjust_run_and_action.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="525">
               <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
               <folding />
             </state>
@@ -74,7 +74,7 @@
       <file leaf-file-name="hero_controller.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/test/Lab07 - Character Controller/hero_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
+            <state relative-caret-position="2325">
               <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="36" />
               <folding />
             </state>
@@ -111,9 +111,9 @@
         <option value="C:/test/Lab08 - Time/get_frame_time_rate.py" />
         <option value="C:/test/Lab08 - Time/adjust_run_and_action.py" />
         <option value="C:/test/Lab07 - Character Controller/json_players.py" />
-        <option value="$PROJECT_DIR$/polargeist.py" />
         <option value="$PROJECT_DIR$/obstacle_data.txt" />
         <option value="C:/test/Drill7-RankingDisplay/mygame.py" />
+        <option value="$PROJECT_DIR$/polargeist.py" />
       </list>
     </option>
   </component>
@@ -147,6 +147,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -154,37 +157,8 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="External Dependencies">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="C:">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="test">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Drill7-RankingDisplay">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Polargeist">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane />
       </pane>
       <pane id="Scratches" />
     </panes>
@@ -193,7 +167,7 @@
     <property name="last_opened_file_path" value="C:/test/Lab07 - Character Controller/hero_controller.py" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/송유신/AppData/Local/Programs/Python/Python35/Lib/site-packages/pico2d.py" />
   </component>
-  <component name="RunManager" selected="Python.mygame">
+  <component name="RunManager" selected="Python.polargeist">
     <configuration default="false" name="polargeist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -422,8 +396,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.mygame" />
-        <item index="1" class="java.lang.String" itemvalue="Python.polargeist" />
+        <item index="0" class="java.lang.String" itemvalue="Python.polargeist" />
+        <item index="1" class="java.lang.String" itemvalue="Python.mygame" />
         <item index="2" class="java.lang.String" itemvalue="Python.boy_grass_object" />
         <item index="3" class="java.lang.String" itemvalue="Python.json_players" />
         <item index="4" class="java.lang.String" itemvalue="Python.adjust_run_and_action" />
@@ -498,7 +472,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -537,12 +511,12 @@
           <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#155#618#0" expanded="false" />
-            <element signature="e#638#1201#0" expanded="false" />
-            <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#3048#4284#0" expanded="false" />
-            <element signature="e#4305#5815#0" expanded="false" />
-            <element signature="e#6072#6461#0" expanded="false" />
+            <element signature="e#746#1309#0" expanded="false" />
+            <element signature="e#1329#1839#0" expanded="false" />
+            <element signature="e#1861#3133#0" expanded="false" />
+            <element signature="e#3156#4392#0" expanded="false" />
+            <element signature="e#4413#5923#0" expanded="false" />
+            <element signature="e#6180#6569#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -602,12 +576,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#155#618#0" expanded="false" />
-            <element signature="e#638#1201#0" expanded="false" />
-            <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#3048#4284#0" expanded="false" />
-            <element signature="e#4305#5815#0" expanded="false" />
-            <element signature="e#6072#6461#0" expanded="false" />
+            <element signature="e#746#1309#0" expanded="false" />
+            <element signature="e#1329#1839#0" expanded="false" />
+            <element signature="e#1861#3133#0" expanded="false" />
+            <element signature="e#3156#4392#0" expanded="false" />
+            <element signature="e#4413#5923#0" expanded="false" />
+            <element signature="e#6180#6569#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -632,12 +606,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#155#618#0" expanded="false" />
-            <element signature="e#638#1201#0" expanded="false" />
-            <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#3048#4284#0" expanded="false" />
-            <element signature="e#4305#5815#0" expanded="false" />
-            <element signature="e#6072#6461#0" expanded="false" />
+            <element signature="e#746#1309#0" expanded="false" />
+            <element signature="e#1329#1839#0" expanded="false" />
+            <element signature="e#1861#3133#0" expanded="false" />
+            <element signature="e#3156#4392#0" expanded="false" />
+            <element signature="e#4413#5923#0" expanded="false" />
+            <element signature="e#6180#6569#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -662,12 +636,12 @@
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#155#618#0" expanded="false" />
-            <element signature="e#638#1201#0" expanded="false" />
-            <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#3048#4284#0" expanded="false" />
-            <element signature="e#4305#5815#0" expanded="false" />
-            <element signature="e#6072#6461#0" expanded="false" />
+            <element signature="e#746#1309#0" expanded="false" />
+            <element signature="e#1329#1839#0" expanded="false" />
+            <element signature="e#1861#3133#0" expanded="false" />
+            <element signature="e#3156#4392#0" expanded="false" />
+            <element signature="e#4413#5923#0" expanded="false" />
+            <element signature="e#6180#6569#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -692,12 +666,12 @@
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#155#618#0" expanded="false" />
-            <element signature="e#638#1201#0" expanded="false" />
-            <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#3048#4284#0" expanded="false" />
-            <element signature="e#4305#5815#0" expanded="false" />
-            <element signature="e#6072#6461#0" expanded="false" />
+            <element signature="e#746#1309#0" expanded="false" />
+            <element signature="e#1329#1839#0" expanded="false" />
+            <element signature="e#1861#3133#0" expanded="false" />
+            <element signature="e#3156#4392#0" expanded="false" />
+            <element signature="e#4413#5923#0" expanded="false" />
+            <element signature="e#6180#6569#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -853,7 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
           <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -861,9 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -871,7 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,7 +854,7 @@
     </entry>
     <entry file="file://C:/test/Lab08 - Time/adjust_run_and_action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="525">
           <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
           <folding />
         </state>
@@ -901,7 +870,7 @@
     </entry>
     <entry file="file://C:/test/Lab07 - Character Controller/hero_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
+        <state relative-caret-position="2325">
           <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="36" />
           <folding />
         </state>
@@ -909,16 +878,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/polargeist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1179">
-          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+        <state relative-caret-position="418">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#155#618#0" expanded="false" />
-            <element signature="e#638#1201#0" expanded="false" />
-            <element signature="e#1221#1731#0" expanded="false" />
-            <element signature="e#3048#4284#0" expanded="false" />
-            <element signature="e#4305#5815#0" expanded="false" />
-            <element signature="e#6072#6461#0" expanded="false" />
+            <element signature="e#746#1309#0" expanded="false" />
+            <element signature="e#1329#1839#0" expanded="false" />
+            <element signature="e#1861#3133#0" expanded="false" />
+            <element signature="e#3156#4392#0" expanded="false" />
+            <element signature="e#4413#5923#0" expanded="false" />
+            <element signature="e#6180#6569#0" expanded="false" />
           </folding>
         </state>
       </provider>

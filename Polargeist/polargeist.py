@@ -12,6 +12,9 @@ air = False
 class BackGround:
     def __init__(self):
         self.x = 550
+        self.bgm = load_music('StereoMadness.mp3')
+        self.bgm.set_volume(64)
+        self.bgm.play(1)
         self.image = load_image('Ground\\background.png')
         self.blue = load_image('Ground\\background_blue.png')
     def update(self):
