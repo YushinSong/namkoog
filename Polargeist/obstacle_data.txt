@@ -1,7 +1,13 @@
 {
     "triangle001" : {"StartState":"TRIANGLE", "x":980, "y":200},
     "triangle002" : {"StartState":"TRIANGLE", "x":1900, "y":200},
-    "triangle003" : {"StartState":"TRIANGLE", "x":1970, "y":200}
+    "triangle003" : {"StartState":"TRIANGLE", "x":1970, "y":200},
+    "triangle004" : {"StartState":"TRIANGLE", "x":2970, "y":200},
+    "triangle005" : {"StartState":"TRIANGLE", "x":3040, "y":200},
+    "square001" : {"StartState":"SQUARE", "x":3110, "y":200},
+    "spike001" : {"StartState":"SPIKE", "x":3180, "y":170},
+    "spike002" : {"StartState":"SPIKE", "x":3250, "y":170},
+    "spike003" : {"StartState":"SPIKE", "x":3320, "y":170}
 }
 
 
