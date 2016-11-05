@@ -120,8 +120,8 @@ class Obstacle:
     def update(self, frame_time):
         global Go
         distance = RUN_SPEED_PPS * frame_time
-        if Go == True:
-            self.x -= distance
+        #if Go == True:
+        #    self.x -= distance
         self.handle_state[self.shape](self)
 
     def draw(self):
