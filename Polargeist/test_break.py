@@ -7,7 +7,7 @@ RUN_SPEED_KMPH = 67.0  # Km / Hour
 RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)  # mpm = 1분에 몇미터
 RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)  # MPS = 1초당 몇미터
 RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?)
-#  스피드 인듯
+                                                   #  스피드 인듯
 back = None
 ground = None
 sliding = True
@@ -15,17 +15,15 @@ running = True
 Go = False
 air = False
 
-
-# 게임 오브젝트 클래스의 정의
+#게임 오브젝트 클래스의 정의
 class BackGround:
     def __init__(self):
         self.x = 550
-        # self.bgm = load_music('StereoMadness.mp3')
-        # self.bgm.set_volume(64)
-        # self.bgm.play(1)
+        #self.bgm = load_music('StereoMadness.mp3')
+        #self.bgm.set_volume(64)
+        #self.bgm.play(1)
         self.image = load_image('Ground\\background.png')
         self.blue = load_image('Ground\\background_blue.png')
-
     def update(self, frame_time):
         global Go
         # 배경은 1초에 1.8미터
@@ -34,11 +32,9 @@ class BackGround:
             self.x -= distance
             if self.x < -550:
                 self.x = 550
-
     def draw(self):
         self.blue.clip_draw(0, 0, 512, 512, 550, 500, 1100, 1100)
         self.image.clip_draw(0, 0, 1536, 512, self.x, 500, 3300, 1100)
-
 
 class Ground:
     def __init__(self):
@@ -46,7 +42,6 @@ class Ground:
         self.image = load_image('Ground\\ground.png')
         self.line = load_image('Ground\\line.png')
         self.blue = load_image('Ground\\ground_blue.png')
-
     def update(self, frame_time):
         global Go
         distance = RUN_SPEED_PPS * frame_time
@@ -54,33 +49,28 @@ class Ground:
             self.x -= distance
             if self.x < 400:
                 self.x = 900
-
     def draw(self):
         self.blue.clip_draw(0, 0, 896, 127, 900, 70, 1800, 200)
         self.image.clip_draw(0, 0, 896, 127, self.x, 70, 1800, 200)
         self.line.clip_draw(0, 0, 896, 127, 560, 168, 900, 4)
 
-
 class Change:
     def __init__(self):
-        self.x, self.y = 2000, 390
-        self.frame, self.count, self.round_count = 0, 0, 0
-        self.image = load_image('Item\\change.png')
-
+         self.x, self.y = 2000, 390
+         self.frame, self.count, self.round_count = 0, 0, 0
+         self.image = load_image('Item\\change.png')
     def update(self, frame_time):
-        global Go
-        distance = RUN_SPEED_PPS * frame_time
-        if Go == True:
+         global Go
+         distance = RUN_SPEED_PPS * frame_time
+         if Go == True:
             self.x -= distance
             if self.x < 0:
                 self.x = 2000
 
     def back_draw(self):
-        self.image.clip_draw(300, 0, 150, 300, self.x - 20, self.y, 75, 150)
-
+         self.image.clip_draw(300, 0, 150, 300, self.x - 20, self.y, 75, 150)
     def draw(self):
-        self.image.clip_draw(0, 0, 150, 300, self.x, self.y, 75, 150)
-
+         self.image.clip_draw(0, 0, 150, 300, self.x, self.y, 75, 150)
 
 class Obstacle:
     SQUARE, TRIANGLE, HALF_SQUARE, SPIKE = 0, 1, 2, 3
@@ -95,11 +85,11 @@ class Obstacle:
 
     def triangle(self):
         self.frame, self.state = 94, 405
-        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 70, 70
+        self.wid, self.hei, self.rwid, self.rhei  = 95, 95, 70, 70
 
     def half_square(self):
         self.frame, self.state = 100, 300
-        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 70, 70
+        self.wid, self.hei, self.rwid, self.rhei  = 95, 95, 70, 70
 
     def spike(self):
         if self.number == 0:
@@ -108,7 +98,7 @@ class Obstacle:
             self.frame, self.state = 400, 250
         else:
             self.frame, self.state = 400, 162
-        self.wid, self.hei, self.rwid, self.rhei = 110, 70, 76, 45
+        self.wid, self.hei, self.rwid, self.rhei  = 110, 70, 76, 45
 
     handle_state = {
         SQUARE: square,
@@ -116,17 +106,14 @@ class Obstacle:
         HALF_SQUARE: half_square,
         SPIKE: spike
     }
-
     def update(self, frame_time):
         global Go
         distance = RUN_SPEED_PPS * frame_time
         if Go == True:
             self.x -= distance
         self.handle_state[self.shape](self)
-
     def draw(self):
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
-
 
 class Airplane:
     def __init__(self):
@@ -135,7 +122,6 @@ class Airplane:
         self.a = 0
         self.image = load_image('Character\\airplane.png')
         self.up = False
-
     def update(self, frame_time):
         global Go
         Go = True
@@ -154,28 +140,23 @@ class Airplane:
                     self.round_count_down = 0
                 self.round_count_down += 1
             self.y = max(0, self.y + 4)
-
     def handle_event(self, event):
         if event.type == SDL_MOUSEBUTTONDOWN:
             self.up = True
         elif event.type == SDL_MOUSEBUTTONUP:
             self.up = False
             self.a = 0
-
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
 
-
 class Soldier:
     global sliding
-
     def __init__(self):
         self.x, self.y = 0, 215
         self.frame, self.count, self.round_count = 0, 0, 0
         self.total_frame = 0.0
         self.jumping = False
         self.image = load_image('Character\\soldier76.png')
-
     def jump(self):
         if self.jumping == True:
             if (self.round_count < 2):
@@ -201,7 +182,6 @@ class Soldier:
                 self.frame = 22
             elif (29 <= self.frame <= 40):
                 self.frame = 34
-
     def update(self, frame_time):
         global Go
         distance = RUN_SPEED_PPS * frame_time
@@ -211,14 +191,11 @@ class Soldier:
             if self.x > 370:
                 Go = True
         self.jump()
-
     def handle_event(self, event):
         if event.type == SDL_MOUSEBUTTONDOWN:
             self.jumping = True
-
     def draw(self):
-        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
-
+        self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y, 90, 90)
 
 # 초기화 코드
 def enter():
@@ -230,8 +207,7 @@ def enter():
     change_in = Change()
     airplane = Airplane()
 
-
-# 입력 핸들
+#입력 핸들
 def handle_events(frame_time):
     global running, soldier, air
     events = get_events()
@@ -246,17 +222,14 @@ def handle_events(frame_time):
             else:
                 airplane.handle_event(event)
 
-
 current_time = 0.0
-
-
 def get_frame_time():
+
     global current_time
 
     frame_time = get_time() - current_time
     current_time += frame_time
     return frame_time
-
 
 def create_obstacles():
     obstacle_state_table = {
@@ -281,7 +254,7 @@ def create_obstacles():
     return obstacle
 
 
-# 게임 루프 코드
+#게임 루프 코드
 def main():
     enter()
     obstacle = create_obstacles()
@@ -302,7 +275,7 @@ def main():
         # Game Randering
         clear_canvas()
         back.draw()
-        # change_in.back_draw()
+        #change_in.back_draw()
         for ob in obstacle:
             ob.draw()
         ground.draw()
@@ -310,13 +283,12 @@ def main():
             soldier.draw()
         else:
             airplane.draw()
-        # change_in.draw()
+        #change_in.draw()
         update_canvas()
-
+    
         delay(0.013)
     exit()
 
-
 if __name__ == '__main__':
     main()
-# 종료 코드
+#종료 코드
