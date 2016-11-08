@@ -89,7 +89,7 @@ class Obstacle:
 
     def __init__(self):
         self.number = random.randint(0, 2)
-        self.image = load_image('Ground\\obstacle.png')
+        self.image = load_image('Ground\\obstacle2.png')
 
     def square(self):
         self.frame, self.state = 0, 405
@@ -322,8 +322,9 @@ def create_obstacles():
     obstacle_data_file.close()
 
     obstacle = []
-    ob = [Obstacle() for i in obstacle_data]
+
     for name in obstacle_data:
+        ob = Obstacle()
         ob.name = name
         ob.x = obstacle_data[name]['x']
         ob.y = obstacle_data[name]['y']
