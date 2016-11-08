@@ -81,15 +81,16 @@ class Change:
     def draw(self):
         self.image.clip_draw(0, 0, 150, 300, self.x, self.y, 75, 150)
 
-
 class Obstacle:
     SQUARE, TRIANGLE, HALF_SQUARE, SPIKE = 0, 1, 2, 3
     NONE_WALL, UP_LEFT_RIGHT, UP_LEFT, LEFT_RIGHT = 4, 5, 6, 7
     UP_RIGHT, UP, LEFT, RIGHT = 8, 9, 10, 11
+    image = None
 
     def __init__(self):
         self.number = random.randint(0, 2)
-        self.image = load_image('Ground\\obstacle2.png')
+        if Obstacle.image == None:
+            Obstacle.image = load_image('Ground\\obstacle2.png')
 
     def square(self):
         self.frame, self.state = 0, 405
@@ -211,7 +212,7 @@ class Soldier:
     global sliding
 
     def __init__(self):
-        self.x, self.y = -1000, 215
+        self.x, self.y = -900, 215
         self.frame, self.count, self.round_count = 0, 0, 0
         self.total_frame = 0.0
         self.jumping = False
@@ -224,13 +225,13 @@ class Soldier:
                     self.frame = (self.frame + 1) % 46
                     self.round_count = 0
                 self.round_count += 1
-            if (self.count < 15):
-                self.y += 12
+            if (self.count < 13):
+                self.y += 13
                 self.count += 1
-            elif (self.count < 31):
-                self.y -= 12
+            elif (self.count < 27):
+                self.y -= 13
                 self.count += 1
-                if (self.count == 30):
+                if (self.count == 26):
                     self.count = 0
                     self.jumping = False
         else:
@@ -322,7 +323,6 @@ def create_obstacles():
     obstacle_data_file.close()
 
     obstacle = []
-
     for name in obstacle_data:
         ob = Obstacle()
         ob.name = name
