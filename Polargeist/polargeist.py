@@ -1,9 +1,9 @@
 import random
 from pico2d import *
 
-# 기여운 솔져의 이동속도는 1초에 18.6미터
-PIXEL_PER_METER = (10.0 / 0.3)  # 10 pixel 30cm
-RUN_SPEED_KMPH = 67.0  # Km / Hour
+# 기여운 솔져의 이동속도는 1초에 1미터
+PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
+RUN_SPEED_KMPH = 3.2  # Km / Hour
 RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)  # mpm = 1분에 몇미터
 RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)  # MPS = 1초당 몇미터
 RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?)
@@ -81,26 +81,26 @@ class Change:
     def draw(self):
         self.image.clip_draw(0, 0, 150, 300, self.x, self.y, 75, 150)
 
-
 class Obstacle:
     SQUARE, TRIANGLE, HALF_SQUARE, SPIKE = 0, 1, 2, 3
+    NONE_WALL, UP_LEFT_RIGHT, UP_LEFT, LEFT_RIGHT = 4, 5, 6, 7
+    UP_RIGHT, UP, LEFT, RIGHT = 8, 9, 10, 11
+    image = None
 
     def __init__(self):
         self.number = random.randint(0, 2)
-        self.image = load_image('Ground\\obstacle.png')
+        if Obstacle.image == None:
+            Obstacle.image = load_image('Ground\\obstacle.png')
 
     def square(self):
         self.frame, self.state = 0, 405
-        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 70, 70
-
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
     def triangle(self):
         self.frame, self.state = 94, 405
-        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 70, 70
-
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
     def half_square(self):
         self.frame, self.state = 100, 300
-        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 70, 70
-
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
     def spike(self):
         if self.number == 0:
             self.frame, self.state = 400, 330
@@ -108,25 +108,67 @@ class Obstacle:
             self.frame, self.state = 400, 250
         else:
             self.frame, self.state = 400, 162
-        self.wid, self.hei, self.rwid, self.rhei = 110, 70, 76, 45
+        self.wid, self.hei, self.rwid, self.rhei = 110, 70, 68, 45
+    def none_wall(self):
+        self.frame, self.state = 191, 403
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+    def up_left_right(self):
+        self.frame, self.state = 285, 405
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+    def up_left(self):
+        self.frame, self.state = 383, 399
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 62, 62
+    def left_right(self):
+        self.frame, self.state = 0, 305
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+    def up_right(self):
+        self.frame, self.state = 202, 305
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+    def up(self):
+        self.frame, self.state = 297, 301
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+    def left(self):
+        self.frame, self.state = 4, 195
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 64, 64
+    def right(self):
+        self.frame, self.state = 103, 198
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+
 
     handle_state = {
         SQUARE: square,
         TRIANGLE: triangle,
         HALF_SQUARE: half_square,
-        SPIKE: spike
+        SPIKE: spike,
+        NONE_WALL: none_wall,
+        UP_LEFT_RIGHT: up_left_right,
+        UP_LEFT: up_left,
+        LEFT_RIGHT: left_right,
+        UP_RIGHT: up_right,
+        UP: up,
+        LEFT: left,
+        RIGHT: right
     }
 
     def update(self, frame_time):
         global Go
         distance = RUN_SPEED_PPS * frame_time
-        #if Go == True:
-        #    self.x -= distance
+        if Go == True:
+            self.x -= distance
         self.handle_state[self.shape](self)
+
+    def get_bb(self):
+        if self.shape == 0:
+            return self.x - 35, self.y - 28, self.x + 35, self.y + 31
+        elif self.shape == 1:
+            return self.x - 10, self.y - 28, self.x + 10, self.y + 30
+        elif self.shape == 3:
+            return self.x - 35, self.y - 28, self.x + 35, self.y + 10
+        else:
+            return 0, 0, 0, 0
 
     def draw(self):
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
-
 
 class Airplane:
     def __init__(self):
@@ -167,10 +209,9 @@ class Airplane:
 
 
 class Soldier:
-    global sliding
 
     def __init__(self):
-        self.x, self.y = 0, 215
+        self.x, self.y = -900, 215
         self.frame, self.count, self.round_count = 0, 0, 0
         self.total_frame = 0.0
         self.jumping = False
@@ -183,13 +224,13 @@ class Soldier:
                     self.frame = (self.frame + 1) % 46
                     self.round_count = 0
                 self.round_count += 1
-            if (self.count < 15):
-                self.y += 12
+            if (self.count < 13):
+                self.y += 13
                 self.count += 1
-            elif (self.count < 31):
-                self.y -= 12
+            elif (self.count < 27):
+                self.y -= 13
                 self.count += 1
-                if (self.count == 30):
+                if (self.count == 26):
                     self.count = 0
                     self.jumping = False
         else:
@@ -215,6 +256,9 @@ class Soldier:
     def handle_event(self, event):
         if event.type == SDL_MOUSEBUTTONDOWN:
             self.jumping = True
+
+    def get_bb(self):
+        return self.x - 28, self.y - 45, self.x + 27, self.y + 15
 
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
@@ -263,7 +307,15 @@ def create_obstacles():
         "SQUARE": Obstacle.SQUARE,
         "TRIANGLE": Obstacle.TRIANGLE,
         "HALF_SQUARE": Obstacle.HALF_SQUARE,
-        "SPIKE": Obstacle.SPIKE
+        "SPIKE": Obstacle.SPIKE,
+        "NONE_WALL": Obstacle.NONE_WALL,
+        "UP_LEFT_RIGHT": Obstacle.UP_LEFT_RIGHT,
+        "UP_LEFT": Obstacle.UP_LEFT,
+        "LEFT_RIGHT": Obstacle.LEFT_RIGHT,
+        "UP_RIGHT": Obstacle.UP_RIGHT,
+        "UP": Obstacle.UP,
+        "LEFT": Obstacle.LEFT,
+        "RIGHT": Obstacle.RIGHT
     }
     obstacle_data_file = open('obstacle_data.txt', 'r')
     obstacle_data = json.load(obstacle_data_file)

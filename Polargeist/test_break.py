@@ -1,9 +1,9 @@
 import random
 from pico2d import *
 
-# 기여운 솔져의 이동속도는 1초에 18.6미터
-PIXEL_PER_METER = (10.0 / 0.3)  # 10 pixel 30cm
-RUN_SPEED_KMPH = 67.0  # Km / Hour
+# 기여운 솔져의 이동속도는 1초에 1미터
+PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
+RUN_SPEED_KMPH = 3.3  # Km / Hour
 RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)  # mpm = 1분에 몇미터
 RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)  # MPS = 1초당 몇미터
 RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?)
@@ -90,7 +90,7 @@ class Obstacle:
     def __init__(self):
         self.number = random.randint(0, 2)
         if Obstacle.image == None:
-            Obstacle.image = load_image('Ground\\obstacle2.png')
+            Obstacle.image = load_image('Ground\\obstacle.png')
 
     def square(self):
         self.frame, self.state = 0, 405
