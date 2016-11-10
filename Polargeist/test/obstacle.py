@@ -1,12 +1,10 @@
 from pico2d import*
-from soldier import Soldier
 import random
 
-soldier = Soldier()
 
 class Obstacle:
     PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
-    RUN_SPEED_KMPH = 3.2  # Km / Hour
+    RUN_SPEED_KMPH = 3.0  # Km / Hour
     RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)  # mpm = 1분에 몇미터
     RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)  # MPS = 1초당 몇미터
     RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?)
@@ -19,6 +17,9 @@ class Obstacle:
 
     def __init__(self):
         self.number = random.randint(0, 2)
+        self.x, self.y = 0, 0
+        self.shape = 0
+        self.total_frame = 0.0
         if Obstacle.image == None:
             Obstacle.image = load_image('Ground\\obstacle.png')
 
@@ -81,14 +82,15 @@ class Obstacle:
     }
 
     def update(self, frame_time):
-        global soldier
         distance = Obstacle.RUN_SPEED_PPS * frame_time
-        if soldier.x >= 70:
+        self.total_frame += frame_time
+
+        if self.total_frame >= 1.5:
             self.x -= distance
         self.handle_state[self.shape](self)
 
     def get_bb(self):
-        if self.shape == 0:
+        if self.shape in (0, 2, 4, 5, 6, 7, 8, 9, 10, 11):
             return self.x - 35, self.y - 28, self.x + 35, self.y + 31
         elif self.shape == 1:
             return self.x - 10, self.y - 28, self.x + 10, self.y + 30
@@ -97,11 +99,12 @@ class Obstacle:
         else:
             return 0, 0, 0, 0
 
+    def draw_bb(self):
+        draw_rectangle(*self.get_bb())
+
     def draw(self):
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
-
-
-
+        self.draw_bb()
 
 def create_obstacles():
     obstacle_state_table = {

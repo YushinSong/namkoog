@@ -365,7 +365,7 @@ def main():
         # change_in.draw()
         update_canvas()
 
-        delay(0.013)
+        #delay(0.013)
     exit()
 
 

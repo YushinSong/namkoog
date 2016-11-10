@@ -1,4 +1,4 @@
 import game_framework
-import collision
+import main_game
 
-game_framework.run(collision)
+game_framework.run(main_game)
