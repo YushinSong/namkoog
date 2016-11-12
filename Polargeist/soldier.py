@@ -14,6 +14,10 @@ class Soldier:
     JUMP_SPEED_MPS = (JUMP_SPEED_MPM / 60.0)  # MPS = 1초당 몇미터
     JUMP_SPEED_PPS = (JUMP_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?).
 
+    TIME_PER_ACTION = 0.5
+    ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
+    FRAMES_PER_ACTION = 8
+
     def __init__(self):
         self.x, self.y = -500, 215
         self.frame, self.count, self.round_count, self.count_over = 0, 0, 0, 0
