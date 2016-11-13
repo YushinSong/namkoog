@@ -15,26 +15,23 @@ class Soldier:
     JUMP_SPEED_PPS = (JUMP_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?).
 
     TIME_PER_ACTION = 0.5
-    ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
+    ACTION_PER_TIME = 2.5 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 8
 
     def __init__(self):
         self.x, self.y = -500, 215
         self.frame, self.count, self.round_count, self.count_over = 0, 0, 0, 0
-        self.total_frame = 0.0
+        self.total_frame, self.total_action = 0.0, 0
         self.jumping = False
         self.fall = False
         self.image = load_image('Character\\soldier76.png')
 
     def jump(self, frame_time):
         y_distance = Soldier.JUMP_SPEED_PPS * frame_time
-        #print("%lf" % self.total_frame)
+        print("%lf" % self.total_frame)
         if self.jumping == True or self.fall == True:
-            if (self.round_count < 4):
-                if (self.round_count == 3):
-                    self.frame = (self.frame + 1) % 46
-                    self.round_count = 0
-                self.round_count += 1
+            self.total_action += Soldier.FRAMES_PER_ACTION * Soldier.ACTION_PER_TIME * frame_time
+            self.frame = int(self.total_action) % 46
 
             if self.fall == True:
                 self.y -= y_distance
