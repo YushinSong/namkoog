@@ -1,5 +1,7 @@
 from pico2d import*
 
+#헬프미
+
 class Soldier:
     # 기여운 솔져의 이동속도는 1초에 1미터
     PIXEL_PER_METER = (70.0 / 0.1)  # 70 pixel 10cm
