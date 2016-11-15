@@ -54,12 +54,11 @@ def collide(a, b):
     left_a, bottom_a, right_a, top_a = a.get_bb()
     left_b, bottom_b, right_b, top_b = b.get_bb()
 
-    if (left_b - right_a) < 100:
-        if left_a > right_b: return False
-        if right_a < left_b: return False
-        if top_a < bottom_b: return False
-        if bottom_a > top_b: return False
-        return True
+    if left_a > right_b: return False
+    if right_a < left_b: return False
+    if top_a < bottom_b: return False
+    if bottom_a > top_b: return False
+    return True
 
 
 def handle_events(frame_time):
@@ -76,36 +75,44 @@ def handle_events(frame_time):
             else:
                 airplane.handle_event(event)
 
+
 def update(frame_time):
+    global air
     for ob in obstacles:
         ob.update(frame_time)
     if air == False:
         soldier.update(frame_time)
     else:
+        #airplane.x, airplane.y = soldier.x, soldier.y
         airplane.update(frame_time)
     ground.update(frame_time)
     back.update(frame_time)
+
+    if air == False:
+        for obstacle in obstacles:
+            if soldier.jumping == True:  # 솔져가 뛸 때
+                ground.notice_for_soldier = False # 무조건 땅이 경계선에 없다고..?????
+            if ground.notice_for_soldier == False: # 땅이 경계선에 없을 때(작동)
+                if soldier.over_y == True:   # 솔져가 시야에 없을 때
+                    obstacle.y_stop, change_in.y_stop = False, False  # 장애물이 움직인다
+                    ground.over_y, obstacle.over_y, change_in.over_y = True, True, True # 장애물과 땅이 움직인다
+                    ground.y_distance, obstacle.y_distance, change_in.y_distance = soldier.y_distance, soldier.y_distance, soldier.y_distance
+                    ground.jumping, ground.fall = soldier.jumping, soldier.fall
+                    obstacle.jumping, obstacle.fall = soldier.jumping, soldier.fall
+                    change_in.jumping, change_in.fall = soldier.jumping, soldier.fall
+            else: # 땅이 경계선에 왔따(작동)
+                if soldier.over_y == True:  # 솔져가 시야에 없다
+                    soldier.y -= soldier.y_distance
+                    laydown()
+                soldier.over_y = False  #솔져 시야에 있는걸로 바꿔줌
+                ground.over_y, obstacle.over_y, change_in.over_y= False, False, False # 땅과 장애물이 멈춘다
+                obstacle.y_stop, change_in.y_stop = True, True  # 장애물 멈춘다
     change_in.update(frame_time)
 
-    for obstacle in obstacles:
-        if soldier.jumping == True:  # 솔져가 뛸 때
-            ground.notice_for_soldier = False # 무조건 땅이 경계선에 없다고..?????
-        if ground.notice_for_soldier == False: # 땅이 경계선에 없을 때(작동)
-            if soldier.over_y == True:   # 솔져가 시야에 없을 때
-                obstacle.y_stop = False  # 장애물이 움직인다
-                ground.over_y, obstacle.over_y = True, True # 장애물과 땅이 움직인다
-                ground.y_distance, obstacle.y_distance = soldier.y_distance, soldier.y_distance
-                ground.jumping, ground.fall = soldier.jumping, soldier.fall
-                obstacle.jumping, obstacle.fall = soldier.jumping, soldier.fall
-        else: # 땅이 경계선에 왔따(작동)
-            if soldier.over_y == True:  # 솔져가 시야에 없다
-                soldier.y -= soldier.y_distance
-                laydown()
-            soldier.over_y = False  #솔져 시야에 있는걸로 바꿔줌
-            ground.over_y, obstacle.over_y = False, False # 땅과 장애물이 멈춘다
-            obstacle.y_stop = True  # 장애물 멈춘다
-
-
+    if collide(soldier, change_in):
+        soldier.over_y = False
+        ground.y_stop = False
+        air = True
     if collide(soldier, ground):
         soldier.fall = False
     else:
@@ -114,13 +121,14 @@ def update(frame_time):
                 soldier.fall = True
     for obstacle in obstacles:
         if collide(soldier, obstacle):
-            if obstacle.shape in (0, 2, 4, 5, 6, 7, 8, 9, 10, 11):
+            if obstacle.shape in (0, 2, 5, 6, 7, 8, 9, 10, 11):
                 soldier.fall = False
+
 
 def draw(frame_time):
     clear_canvas()
     back.draw()
-    #change_in.back_draw()
+    change_in.back_draw()
     for ob in obstacles:
         ob.draw()
     ground.draw()
@@ -128,17 +136,7 @@ def draw(frame_time):
         soldier.draw()
     else:
         airplane.draw()
-    #change_in.draw()
-
-    for ob in obstacles:
-        ob.draw_bb()
-    ground.draw_bb()
-    if air == False:
-        soldier.draw_bb()
-    else:
-        airplane.draw()
-    #change_in.draw()
-
+    change_in.draw()
 
 
     update_canvas()

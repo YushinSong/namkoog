@@ -1,7 +1,5 @@
 from pico2d import*
 
-#헬프미
-
 class Soldier:
     # 기여운 솔져의 이동속도는 1초에 1미터
     PIXEL_PER_METER = (70.0 / 0.1)  # 70 pixel 10cm
@@ -23,20 +21,23 @@ class Soldier:
     def __init__(self):
         self.x, self.y = -500, 215
         self.frame, self.count, self.round_count, self.count_over = 0, 0, 0, 0
-        self.total_frame, self.total_action = 0.0, 0
+        self.total_frame, self.total_action, self.y_distance = 0.0, 0, 0.0
+        self.over_y, self.notover_y = False, 0
         self.jumping = False
         self.fall = False
         self.image = load_image('Character\\soldier76.png')
 
     def jump(self, frame_time):
-        y_distance = Soldier.JUMP_SPEED_PPS * frame_time
-        print("%lf" % self.total_frame)
+        self.y_distance = Soldier.JUMP_SPEED_PPS * frame_time
+        if self.y > 400:
+            self.over_y = True
         if self.jumping == True or self.fall == True:
             self.total_action += Soldier.FRAMES_PER_ACTION * Soldier.ACTION_PER_TIME * frame_time
             self.frame = int(self.total_action) % 46
 
             if self.fall == True:
-                self.y -= y_distance
+                if self.over_y == False:
+                    self.y -= self.y_distance
 
             if self.jumping == True:
                 if self.count == 0:
@@ -44,7 +45,8 @@ class Soldier:
                     self.count_over = self.count + 0.25
                 else:
                     if self.total_frame < self.count_over:
-                        self.y += y_distance
+                        if self.over_y == False:
+                            self.y += self.y_distance
                     else:
                         self.count = 0
                         self.fall = True

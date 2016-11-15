@@ -42,8 +42,11 @@ class Ground:
     #  스피드 인듯
 
     def __init__(self):
-        self.x = 900
+        self.x, self.y = 900, 70
         self.total_frame = 0.0
+        self.over_y, self.jumping, self.fall = False, False, False
+        self.notice_for_soldier = True
+        self.y_distance = 0.0
         self.image = load_image('Ground\\ground.png')
         self.line = load_image('Ground\\line.png')
         self.blue = load_image('Ground\\ground_blue.png')
@@ -54,13 +57,23 @@ class Ground:
 
         if self.total_frame >= 1.5:
             self.x -= distance
-            if self.x < 400:
-                self.x = 900
+            if self.x < 300:
+                self.x = 815
+        if self.over_y == True:
+            if self.jumping == True:
+                self.y -= self.y_distance
+            elif self.fall == True:
+                if self.y <= 70:
+                    self.y += self.y_distance
+                    self.notice_for_soldier = False
+                else:
+                    self.notice_for_soldier = True
+
 
     def draw(self):
-        self.blue.clip_draw(0, 0, 896, 127, 900, 70, 1800, 200)
-        self.image.clip_draw(0, 0, 896, 127, self.x, 70, 1800, 200)
-        self.line.clip_draw(0, 0, 896, 127, 560, 168, 900, 4)
+        self.blue.clip_draw(0, 0, 896, 127, self.x, self.y, 1800, 200)
+        self.image.clip_draw(0, 0, 896, 127, self.x, self.y, 1800, 200)
+        self.line.clip_draw(0, 0, 896, 127, 560, self.y + 98, 900, 4)
         self.draw_bb()
 
     def get_bb(self):

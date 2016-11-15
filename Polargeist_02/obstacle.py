@@ -1,10 +1,9 @@
 from pico2d import*
 import random
 
-
 class Obstacle:
     PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
-    RUN_SPEED_KMPH = 2.8  # Km / Hour
+    RUN_SPEED_KMPH = 3.4  # Km / Hour
     RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)  # mpm = 1분에 몇미터
     RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)  # MPS = 1초당 몇미터
     RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?)
@@ -24,7 +23,7 @@ class Obstacle:
         self.shape = 0
         self.total_frame = 0.0
         if Obstacle.image == None:
-            Obstacle.image = load_image('Ground\\obstacle.png')
+            Obstacle.image = load_image('Ground\\obstacle_test.png')
 
     def square(self):
         self.frame, self.state = 0, 405
@@ -34,7 +33,7 @@ class Obstacle:
         self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
     def half_square(self):
         self.frame, self.state = 100, 300
-        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+        self.wid, self.hei, self.rwid, self.rhei = 102, 95, 65, 65
     def spike(self):
         if self.number == 0:
             self.frame, self.state = 400, 330
@@ -87,34 +86,27 @@ class Obstacle:
     def update(self, frame_time):
         self.total_frame += frame_time
         distance = Obstacle.RUN_SPEED_PPS * frame_time
-
-        if self.total_frame >= 1.5:
+        print("%lf" % self.total_frame)
+        if self.total_frame >= 1.1:
             self.x -= distance
         self.handle_state[self.shape](self)
 
         if self.over_y == True:
             if self.jumping == True:
                 self.y -= self.y_distance
-
-                #if self.count == 0:
-                #    print("%d" % self.count)
-                #    self.y -= self.y_distance
-                #self.count += 1
             if self.fall == True:
                 if self.y_stop == False:
-                    #print("fall")
                     self.y += self.y_distance
-                #self.count = 0
-
-
 
     def get_bb(self):
-        if self.shape in (0, 2, 4, 5, 6, 7, 8, 9, 10, 11):
-            return self.x - 35, self.y - 28, self.x + 35, self.y + 31
+        if self.shape in (0, 5, 6, 7, 8, 9, 10, 11):
+            return self.x - 30, self.y - 28, self.x + 30, self.y + 31
         elif self.shape == 1:
-            return self.x - 10, self.y - 28, self.x + 10, self.y + 30
+            return self.x - 10, self.y - 28, self.x + 10, self.y + 25
+        elif self.shape == 2:
+            return self.x - 30, self.y, self.x + 30, self.y + 31
         elif self.shape == 3:
-            return self.x - 35, self.y - 28, self.x + 35, self.y + 10
+            return self.x - 30, self.y - 28, self.x + 30, self.y + 10
         else:
             return 0, 0, 0, 0
 
@@ -123,6 +115,7 @@ class Obstacle:
 
     def draw(self):
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
+        #self.draw_bb()
 
 def create_obstacles():
     obstacle_state_table = {
@@ -139,7 +132,7 @@ def create_obstacles():
         "LEFT": Obstacle.LEFT,
         "RIGHT": Obstacle.RIGHT
     }
-    obstacle_data_file = open('obstacle_data.txt', 'r')
+    obstacle_data_file = open('ob_data\\obstacle_data.txt', 'r')
     obstacle_data = json.load(obstacle_data_file)
     obstacle_data_file.close()
 
@@ -147,7 +140,7 @@ def create_obstacles():
     for name in obstacle_data:
         ob = Obstacle()
         ob.name = name
-        ob.x = obstacle_data[name]['x'] - 2000
+        ob.x = obstacle_data[name]['x'] - 00
         ob.y = obstacle_data[name]['y']
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
         obstacle.append(ob)
