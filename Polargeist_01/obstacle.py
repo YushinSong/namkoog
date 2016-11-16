@@ -1,11 +1,9 @@
 from pico2d import*
 import random
 
-one, two, three, four, five, six = None, None, None, None, None, None
-
 class Obstacle:
     PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
-    RUN_SPEED_KMPH = 2.8  # Km / Hour
+    RUN_SPEED_KMPH = 3.4  # Km / Hour
     RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)  # mpm = 1분에 몇미터
     RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)  # MPS = 1초당 몇미터
     RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?)
@@ -25,7 +23,7 @@ class Obstacle:
         self.shape = 0
         self.total_frame = 0.0
         if Obstacle.image == None:
-            Obstacle.image = load_image('Ground\\obstacle.png')
+            Obstacle.image = load_image('Ground\\obstacle_test.png')
 
     def square(self):
         self.frame, self.state = 0, 405
@@ -88,12 +86,8 @@ class Obstacle:
     def update(self, frame_time):
         self.total_frame += frame_time
         distance = Obstacle.RUN_SPEED_PPS * frame_time
-
         print("%lf" % self.total_frame)
-        if self.total_frame > 10:
-            pass
-
-        if self.total_frame >= 1.5:
+        if self.total_frame >= 1.1:
             self.x -= distance
         self.handle_state[self.shape](self)
 
@@ -108,7 +102,7 @@ class Obstacle:
         if self.shape in (0, 5, 6, 7, 8, 9, 10, 11):
             return self.x - 30, self.y - 28, self.x + 30, self.y + 31
         elif self.shape == 1:
-            return self.x - 10, self.y - 28, self.x + 10, self.y + 30
+            return self.x - 10, self.y - 28, self.x + 10, self.y + 25
         elif self.shape == 2:
             return self.x - 30, self.y, self.x + 30, self.y + 31
         elif self.shape == 3:
@@ -121,7 +115,7 @@ class Obstacle:
 
     def draw(self):
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
-        self.draw_bb()
+        #self.draw_bb()
 
 def create_obstacles():
     obstacle_state_table = {

@@ -36,7 +36,7 @@ class Hit:
         self.total_frame += frame_time
         distance = Hit.RUN_SPEED_PPS * frame_time
 
-        if self.total_frame >= 1.5:
+        if self.total_frame >= 1.1:
             self.x -= distance
         self.handle_state[self.shape](self)
 
