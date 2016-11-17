@@ -23,7 +23,7 @@
       <file leaf-file-name="main_game.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2719">
+            <state relative-caret-position="2975">
               <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -35,9 +35,11 @@
       <file leaf-file-name="test_collision.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_collision.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="140">
+              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,8 +47,8 @@
       <file leaf-file-name="obstacle.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/obstacle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1450">
-              <caret line="85" column="33" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+            <state relative-caret-position="215">
+              <caret line="126" column="37" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#1018#1115#0" expanded="false" />
@@ -177,6 +179,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -198,11 +201,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/Polargeist_03" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/RHS-master" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -810,27 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obstacle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1450">
-          <caret line="85" column="33" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#1018#1115#0" expanded="false" />
-            <element signature="e#1148#1246#0" expanded="false" />
-            <element signature="e#1282#1382#0" expanded="false" />
-            <element signature="e#1412#1682#0" expanded="false" />
-            <element signature="e#1716#1815#0" expanded="false" />
-            <element signature="e#1853#1952#0" expanded="false" />
-            <element signature="e#1984#2083#0" expanded="false" />
-            <element signature="e#2118#2215#0" expanded="false" />
-            <element signature="e#2248#2347#0" expanded="false" />
-            <element signature="e#2374#2473#0" expanded="false" />
-            <element signature="e#2502#2599#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/sdl2/rect.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -880,16 +861,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/2DGPyushin/Yushin github/namkoog/2015180019.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/2DGPyushin/Yushin github/namkoog/2015180019.txt" />
     <entry file="file://$PROJECT_DIR$/main_game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2719">
+        <state relative-caret-position="2975">
           <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
@@ -897,11 +872,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/obstacle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="126" column="37" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#1018#1115#0" expanded="false" />
+            <element signature="e#1148#1246#0" expanded="false" />
+            <element signature="e#1282#1382#0" expanded="false" />
+            <element signature="e#1412#1682#0" expanded="false" />
+            <element signature="e#1716#1815#0" expanded="false" />
+            <element signature="e#1853#1952#0" expanded="false" />
+            <element signature="e#1984#2083#0" expanded="false" />
+            <element signature="e#2118#2215#0" expanded="false" />
+            <element signature="e#2248#2347#0" expanded="false" />
+            <element signature="e#2374#2473#0" expanded="false" />
+            <element signature="e#2502#2599#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_collision.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="140">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
