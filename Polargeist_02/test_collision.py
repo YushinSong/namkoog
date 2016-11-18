@@ -1,6 +1,11 @@
 import json
 from obstacle import Obstacle
 
+# 1미터면 부딫힐 일 없음
+# 7칸에 10센치
+# 총 110칸
+#
+
 def create_obstacles():
     obstacle_state_table = {
         "SQUARE": Obstacle.SQUARE,
@@ -29,7 +34,6 @@ def create_obstacles():
         ob.x = obstacle_data[name]['x'] - 00
         ob.y = obstacle_data[name]['y']
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
-        if ob.x
         obstacle[0][count].append(ob)
         count += 1
 
