@@ -23,7 +23,7 @@ class Obstacle:
         self.shape = 0
         self.total_frame = 0.0
         if Obstacle.image == None:
-            Obstacle.image = load_image('Ground\\obstacle_test.png')
+            Obstacle.image = load_image('Ground\\obstacle.png')
 
     def square(self):
         self.frame, self.state = 0, 405

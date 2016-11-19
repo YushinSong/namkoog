@@ -79,7 +79,10 @@ def handle_events(frame_time):
 def update(frame_time):
     global air
     for ob in obstacles:
-        ob.update(frame_time)
+        if ob.x + 100 < soldier.x:
+            obstacles.remove(ob)
+        else:
+            ob.update(frame_time)
     if air == False:
         soldier.update(frame_time)
     else:
