@@ -1,8 +1,5 @@
 from pico2d import*
-from soldier import Soldier
 import random
-
-soldier = None
 
 class Obstacle:
     PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
@@ -14,16 +11,16 @@ class Obstacle:
 
     SQUARE, TRIANGLE, HALF_SQUARE, SPIKE = 0, 1, 2, 3
     NONE_WALL, UP_LEFT_RIGHT, UP_LEFT, LEFT_RIGHT = 4, 5, 6, 7
-    UP_RIGHT, UP, LEFT, RIGHT = 8, 9, 10, 11
+    UP_RIGHT, UP, LEFT, RIGHT, DOWN = 8, 9, 10, 11, 12
     image = None
 
     def __init__(self):
-        global soldier
-        soldier = Soldier()
         self.number = random.randint(0, 2)
         self.x, self.y = 0, 0
         self.over_y, self.jumping, self.fall, self.y_stop = False, False, False, False
         self.total_frame, self.count, self.count_over = 0.0, 0, 0
+        self.soldierX, self.soldierY = 0, 0
+        self.nearby, self.collinearby = False, False
         self.y_distance = 0.0
         self.shape = 0
         self.total_frame = 0.0
@@ -71,6 +68,10 @@ class Obstacle:
     def right(self):
         self.frame, self.state = 103, 198
         self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+    def down(self):
+        self.frame, self.state = 398, 62
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+
 
 
     handle_state = {
@@ -85,7 +86,8 @@ class Obstacle:
         UP_RIGHT: up_right,
         UP: up,
         LEFT: left,
-        RIGHT: right
+        RIGHT: right,
+        DOWN: down
     }
 
     def update(self, frame_time):
@@ -95,6 +97,17 @@ class Obstacle:
             self.x -= distance
         self.handle_state[self.shape](self)
 
+        tempX, tempY = self.x - self.soldierX, self.y - self.soldierY
+        self.tempdistance = math.sqrt((tempX * tempX) + (tempY * tempY))
+        if self.tempdistance < 1100:
+            self.nearby = True
+        else:
+            self.nearby = False
+        if self.tempdistance < 100:
+            self.collinearby = True
+        else:
+            self.collinearby = False
+
         if self.over_y == True:
             if self.jumping == True:
                 self.y -= self.y_distance
@@ -103,7 +116,7 @@ class Obstacle:
                     self.y += self.y_distance
 
     def get_bb(self):
-        if self.shape in (0, 5, 6, 7, 8, 9, 10, 11):
+        if self.shape in (0, 5, 6, 7, 8, 9, 10, 11, 12):
             return self.x - 30, self.y - 28, self.x + 30, self.y + 31
         elif self.shape == 1:
             return self.x - 10, self.y - 28, self.x + 10, self.y + 25
@@ -134,7 +147,8 @@ def create_obstacles():
         "UP_RIGHT": Obstacle.UP_RIGHT,
         "UP": Obstacle.UP,
         "LEFT": Obstacle.LEFT,
-        "RIGHT": Obstacle.RIGHT
+        "RIGHT": Obstacle.RIGHT,
+        "DOWN": Obstacle.DOWN
     }
     obstacle_data_file = open('ob_data\\obstacle_data.txt', 'r')
     obstacle_data = json.load(obstacle_data_file)
@@ -144,7 +158,7 @@ def create_obstacles():
     for name in obstacle_data:
         ob = Obstacle()
         ob.name = name
-        ob.x = obstacle_data[name]['x'] - 00
+        ob.x = obstacle_data[name]['x'] - 000
         ob.y = obstacle_data[name]['y']
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
         obstacle.append(ob)

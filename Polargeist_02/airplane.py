@@ -11,7 +11,7 @@ class Airplane:
     TIME_PER_ACTION = 0.5
     ACTION_PER_TIME = 1.5 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 8
-    UP_ACTION_PER_TIME = 10.0 / TIME_PER_ACTION
+    UP_ACTION_PER_TIME = 0.1 / TIME_PER_ACTION
     UP_FRAMES_PER_ACTION = 8
 
     def __init__(self):
@@ -25,7 +25,7 @@ class Airplane:
     def update(self, frame_time):
         distance = (Airplane.RUN_SPEED_PPS + self.a) * frame_time
         if self.up == False:
-            if self.frame < 24:
+            if self.frame < 15:
                 self.total_action += Airplane.FRAMES_PER_ACTION * Airplane.ACTION_PER_TIME * frame_time
                 self.frame = int(self.total_action) % 25
             self.y -= distance

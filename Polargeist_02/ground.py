@@ -13,9 +13,9 @@ class BackGround:
 
     def __init__(self):
         self.x = 550
-        self.bgm = load_music('song\\StereoMadness.mp3')
-        self.bgm.set_volume(64)
-        self.bgm.play(1)
+        #self.bgm = load_music('song\\StereoMadness.mp3')
+        #self.bgm.set_volume(64)
+        #self.bgm.play(1)
         self.total_frame = 0.0
         if BackGround.image == None:
             BackGround.image = load_image('Ground\\background.png')

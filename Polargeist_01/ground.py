@@ -9,15 +9,18 @@ class BackGround:
     RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?)
     #  스피드 인듯
 
+    image = None
+
     def __init__(self):
         self.x = 550
-        self.bgm = load_music('song\\StereoMadness.mp3')
-        self.bgm.set_volume(64)
-        self.bgm.play(1)
+        #self.bgm = load_music('song\\StereoMadness.mp3')
+        #self.bgm.set_volume(64)
+        #self.bgm.play(1)
         self.total_frame = 0.0
-        self.image = load_image('Ground\\background.png')
-        self.blue = load_image('Ground\\background_blue.png')
-        self.red = load_image('Ground\\background_purple.png')
+        if BackGround.image == None:
+            BackGround.image = load_image('Ground\\background.png')
+            BackGround.blue = load_image('Ground\\background_blue.png')
+            BackGround.red = load_image('Ground\\background_purple.png')
 
     def update(self, frame_time):
         # 배경은 1초에 0.1미터
@@ -49,16 +52,19 @@ class Ground:
     RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?)
     #  스피드 인듯
 
+    image = None
+
     def __init__(self):
         self.x, self.y = 900, 70
         self.total_frame = 0.0
         self.over_y, self.jumping, self.fall = False, False, False
         self.notice_for_soldier, self.dead = True, False
         self.y_distance = 0.0
-        self.image = load_image('Ground\\ground.png')
-        self.line = load_image('Ground\\line.png')
-        self.blue = load_image('Ground\\ground_blue.png')
-        self.red = load_image('Ground\\ground_purple.png')
+        if Ground.image == None:
+            Ground.image = load_image('Ground\\ground.png')
+            Ground.line = load_image('Ground\\line.png')
+            Ground.blue = load_image('Ground\\ground_blue.png')
+            Ground.red = load_image('Ground\\ground_purple.png')
 
     def update(self, frame_time):
         distance = Ground.RUN_SPEED_PPS * frame_time

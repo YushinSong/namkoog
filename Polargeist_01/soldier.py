@@ -18,6 +18,8 @@ class Soldier:
     ACTION_PER_TIME = 2.5 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 8
 
+    image = None
+
     def __init__(self):
         self.x, self.y = -300, 215
         self.frame, self.count, self.round_count, self.count_over = 0, 0, 0, 0
@@ -26,7 +28,8 @@ class Soldier:
         self.jumping = False
         self.rebirth = False
         self.fall = False
-        self.image = load_image('Character\\soldier76.png')
+        if Soldier.image == None:
+            Soldier.image = load_image('Character\\soldier76.png')
 
     def jump(self, frame_time):
         self.y_distance = Soldier.JUMP_SPEED_PPS * frame_time

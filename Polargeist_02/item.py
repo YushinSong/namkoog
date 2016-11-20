@@ -8,8 +8,6 @@ class Change:
     RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)  # PPS = pulse per second(?)
     #  스피드 인듯
 
-    image = None
-
     def __init__(self):
         self.x, self.y = 16160, 420
         self.over_y, self.jumping, self.fall, self.y_stop = False, False, False, False
@@ -17,8 +15,7 @@ class Change:
         self.y_distance = 0.0
         self.total_frame = 0.0
         self.frame, self.count, self.round_count = 0, 0, 0
-        if Change.image == None:
-            Change.image = load_image('Item\\change.png')
+        self.image = load_image('Item\\change.png')
 
     def update(self, frame_time):
         distance = Change.RUN_SPEED_PPS * frame_time
