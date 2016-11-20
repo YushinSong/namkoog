@@ -1,5 +1,8 @@
 from pico2d import*
+from soldier import Soldier
 import random
+
+soldier = None
 
 class Obstacle:
     PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
@@ -15,6 +18,8 @@ class Obstacle:
     image = None
 
     def __init__(self):
+        global soldier
+        soldier = Soldier()
         self.number = random.randint(0, 2)
         self.x, self.y = 0, 0
         self.over_y, self.jumping, self.fall, self.y_stop = False, False, False, False
@@ -86,7 +91,6 @@ class Obstacle:
     def update(self, frame_time):
         self.total_frame += frame_time
         distance = Obstacle.RUN_SPEED_PPS * frame_time
-        print("%lf" % self.total_frame)
         if self.total_frame >= 1.1:
             self.x -= distance
         self.handle_state[self.shape](self)

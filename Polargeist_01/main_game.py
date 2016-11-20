@@ -127,7 +127,7 @@ def update(frame_time):
 
 def draw(frame_time):
     clear_canvas()
-    back.draw()
+    #back.draw()
     change_in.back_draw()
     for ob in obstacles:
         ob.draw()

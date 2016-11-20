@@ -8,7 +8,6 @@ from ground import BackGround, Ground
 from item import Change
 from airplane import Airplane
 
-
 back, ground = None, None
 soldier, airplane = None, None
 change_in, obstacles, obstacle = None, None, None
@@ -79,10 +78,7 @@ def handle_events(frame_time):
 def update(frame_time):
     global air
     for ob in obstacles:
-        if ob.x + 100 < soldier.x:
-            obstacles.remove(ob)
-        else:
-            ob.update(frame_time)
+        ob.update(frame_time)
     if air == False:
         soldier.update(frame_time)
     else:
@@ -130,7 +126,7 @@ def update(frame_time):
 
 def draw(frame_time):
     clear_canvas()
-    #back.draw()
+    back.draw()
     change_in.back_draw()
     for ob in obstacles:
         ob.draw()
