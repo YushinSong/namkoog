@@ -119,6 +119,9 @@ def update(frame_time):
             if collision.TableCollide(soldier, obstacle):
                 if obstacle.shape in (0, 2, 5, 6, 7, 8, 9, 10, 11):
                     soldier.fall = False
+            if collision.TableCollide(airplane, obstacle):
+                if obstacle.shape in (0, 2, 5, 6, 7, 8, 9, 10, 11):
+                    airplane.stop = True
 
 
 def draw(frame_time):
@@ -128,6 +131,7 @@ def draw(frame_time):
     for ob in obstacles:
         if ob.nearby == True:
             ob.draw()
+            #ob.draw_bb()
     ground.draw()
     #ground.draw_bb()
     if air == False:
@@ -141,4 +145,4 @@ def draw(frame_time):
 
 def laydown(frame_time):
     for obstacle in obstacles:
-        obstacle.y -= ( soldier.y_distance * 0.98 )
+        obstacle.y -= ( soldier.y_distance * 0.999 )

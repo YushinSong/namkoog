@@ -17,5 +17,5 @@ def TableCollide(a, b):
     if right_a < left_b: return False
     if top_a < bottom_b: return False
     if bottom_a > top_b: return False
-    if top_b - 15 < bottom_a < top_b:
+    if top_b - 18 < bottom_a < top_b:
         return True
