@@ -2,6 +2,7 @@ from pico2d import*
 
 import game_framework
 
+import collision
 from soldier import Soldier
 from obstacle import Obstacle, create_obstacles
 from ground import BackGround, Ground
@@ -49,16 +50,6 @@ def pause():
 
 def resume():
     pass
-
-def collide(a, b):
-    left_a, bottom_a, right_a, top_a = a.get_bb()
-    left_b, bottom_b, right_b, top_b = b.get_bb()
-
-    if left_a > right_b: return False
-    if right_a < left_b: return False
-    if top_a < bottom_b: return False
-    if bottom_a > top_b: return False
-    return True
 
 
 def handle_events(frame_time):
@@ -110,20 +101,22 @@ def update(frame_time):
             obstacle.y_stop, change_in.y_stop = True, True  # 장애물 멈춘다
     change_in.update(frame_time)
 
-    if collide(soldier, change_in):
+    if collision.Collide(soldier, change_in):
         soldier.over_y = False
         ground.y_stop = False
         air = True
-    if collide(soldier, ground):
+    if collision.Collide(soldier, ground):
         soldier.fall = False
     else:
         for obstacle in obstacles:
             if obstacle.collinearby == True:
-                if collide(soldier, obstacle) == False and soldier.jumping == False:
+                if collision.TableCollide(soldier, obstacle) == False and soldier.jumping == False:
                     soldier.fall = True
+    if collision.Collide(airplane, ground):
+        airplane.stop = True
     for obstacle in obstacles:
         if obstacle.collinearby == True:
-            if collide(soldier, obstacle):
+            if collision.TableCollide(soldier, obstacle):
                 if obstacle.shape in (0, 2, 5, 6, 7, 8, 9, 10, 11):
                     soldier.fall = False
 
@@ -136,7 +129,7 @@ def draw(frame_time):
         if ob.nearby == True:
             ob.draw()
     ground.draw()
-    ground.draw_bb()
+    #ground.draw_bb()
     if air == False:
         soldier.draw()
     else:
