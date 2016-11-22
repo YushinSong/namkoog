@@ -13,14 +13,16 @@ class Airplane:
     FRAMES_PER_ACTION = 8
     UP_ACTION_PER_TIME = 0.1 / TIME_PER_ACTION
     UP_FRAMES_PER_ACTION = 8
+    image = None
 
     def __init__(self):
         self.x, self.y = 450, 450
         self.frame, self.round_count_up, self.round_count_down = 2, 0, 0
         self.total_action = 0.0
         self.a = 0
-        self.image = load_image('Character\\airplane.png')
         self.up, self.stop = False, False
+        if Airplane.image == None:
+            Airplane.image = load_image('Character\\airplane.png')
 
     def update(self, frame_time):
         distance = (Airplane.RUN_SPEED_PPS + self.a) * frame_time
@@ -52,4 +54,3 @@ class Airplane:
 
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
-        self.draw_bb()
