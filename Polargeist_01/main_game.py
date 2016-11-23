@@ -4,7 +4,7 @@ import game_framework
 
 import collision
 from soldier import Soldier
-from obstacle import Obstacle, create_obstacles
+from obstacle import Obstacle, create_obstacles_01, create_obstacles_02
 from ground import BackGround, Ground
 from item import Change, create_changes
 from airplane import Airplane
@@ -13,12 +13,14 @@ from airplane import Airplane
 back, ground = None, None
 soldier, airplane, changes = None, None, None
 change, obstacles, obstacle = None, None, None
+FirstStage = True
+total_frame = 0.0
 air = False
 
 def create_world():
     global ground, soldier, back, airplane, change, obstacles, obstacle, changes
     changes = create_changes()
-    obstacles = create_obstacles()
+    obstacles = create_obstacles_01()
     obstacle = Obstacle()
     back = BackGround()
     ground = Ground()
@@ -67,9 +69,17 @@ def handle_events(frame_time):
             else:
                 airplane.handle_event(event)
 
-
 def update(frame_time):
-    global air
+    global air, obstacles, FirstStage, total_frame
+    total_frame += frame_time
+
+    if total_frame > 38.3:
+        if FirstStage == True:
+            obstacles = create_obstacles_02()
+            for obstacle in obstacles:
+                obstacle.total_frame = 38.3
+            FirstStage = False
+
     for ob in obstacles:
         ob.soldierX, ob.soldierY = soldier.x, soldier.y
         ob.update(frame_time)
@@ -154,7 +164,6 @@ def draw(frame_time):
         airplane.draw()
     for change in changes:
         change.draw()
-
 
     update_canvas()
 

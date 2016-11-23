@@ -140,7 +140,7 @@ class Obstacle:
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
         #self.draw_bb()
 
-def create_obstacles():
+def create_obstacles_01():
     obstacle_state_table = {
         "SQUARE": Obstacle.SQUARE,
         "TRIANGLE": Obstacle.TRIANGLE,
@@ -157,7 +157,7 @@ def create_obstacles():
         "DOWN": Obstacle.DOWN,
         "DOWN_TRIANGLE": Obstacle.DOWN_TRIANGLE
     }
-    obstacle_data_file = open('ob_data\\obstacle_data.txt', 'r')
+    obstacle_data_file = open('ob_data\\obstacle_data_01.txt', 'r')
     obstacle_data = json.load(obstacle_data_file)
     obstacle_data_file.close()
 
@@ -166,6 +166,38 @@ def create_obstacles():
         ob = Obstacle()
         ob.name = name
         ob.x = obstacle_data[name]['x'] - 00
+        ob.y = obstacle_data[name]['y']
+        ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
+        obstacle.append(ob)
+
+    return obstacle
+
+def create_obstacles_02():
+    obstacle_state_table = {
+        "SQUARE": Obstacle.SQUARE,
+        "TRIANGLE": Obstacle.TRIANGLE,
+        "HALF_SQUARE": Obstacle.HALF_SQUARE,
+        "SPIKE": Obstacle.SPIKE,
+        "NONE_WALL": Obstacle.NONE_WALL,
+        "UP_LEFT_RIGHT": Obstacle.UP_LEFT_RIGHT,
+        "UP_LEFT": Obstacle.UP_LEFT,
+        "LEFT_RIGHT": Obstacle.LEFT_RIGHT,
+        "UP_RIGHT": Obstacle.UP_RIGHT,
+        "UP": Obstacle.UP,
+        "LEFT": Obstacle.LEFT,
+        "RIGHT": Obstacle.RIGHT,
+        "DOWN": Obstacle.DOWN,
+        "DOWN_TRIANGLE": Obstacle.DOWN_TRIANGLE
+    }
+    obstacle_data_file = open('ob_data\\obstacle_data_02.txt', 'r')
+    obstacle_data = json.load(obstacle_data_file)
+    obstacle_data_file.close()
+
+    obstacle = []
+    for name in obstacle_data:
+        ob = Obstacle()
+        ob.name = name
+        ob.x = obstacle_data[name]['x'] - 24600 #24600
         ob.y = obstacle_data[name]['y']
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
         obstacle.append(ob)

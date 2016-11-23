@@ -187,7 +187,7 @@
     "half023" : {"StartState":"HALF_SQUARE", "x":12460, "y":318},
     "half024" : {"StartState":"HALF_SQUARE", "x":12520, "y":318},
     "triangle024" : {"StartState":"TRIANGLE", "x":12520, "y":378},
-    "spike055" : {"StartState":"SPIKE", "x":12580, "y":168},
+    "spike055" : {"StartState":"SPIKE", "x":12580, "y":168}
 }
 
 

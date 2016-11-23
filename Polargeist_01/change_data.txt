@@ -1,4 +1,4 @@
 {
-    "change_in001" : {"StartState":"CHANGE_IN", "x":16120, "y":420},
-    "change_out001" : {"StartState":"CHANGE_OUT", "x":24980, "y":350}
+    "change_in001" : {"StartState":"CHANGE_IN", "x":16120, "y":500},
+    "change_out001" : {"StartState":"CHANGE_OUT", "x":24980, "y":430}
 }

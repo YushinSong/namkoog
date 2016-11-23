@@ -33,7 +33,7 @@ class Soldier:
 
     def jump(self, frame_time):
         self.y_distance = Soldier.JUMP_SPEED_PPS * frame_time
-        if self.y > 400:
+        if self.y > 450:
             self.over_y = True
         if self.jumping == True or self.fall == True:
             self.total_action += Soldier.FRAMES_PER_ACTION * Soldier.ACTION_PER_TIME * frame_time

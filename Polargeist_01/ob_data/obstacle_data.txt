@@ -430,9 +430,7 @@
     "spike087" : {"StartState":"SPIKE", "x":14380, "y":168},
     "spike088" : {"StartState":"SPIKE", "x":14440, "y":168},
     "spike089" : {"StartState":"SPIKE", "x":14500, "y":168},
-    "spike090" : {"StartState":"SPIKE", "x":14560, "y":168},
-
-    "half035" : {"StartState":"HALF_SQUARE", "x":14320, "y":618},
+    "spike090" : {"StartState":"SPIKE", "x":14560, "y":168},"half035" : {"StartState":"HALF_SQUARE", "x":14320, "y":618},
     "triangle026" : {"StartState":"TRIANGLE", "x":14320, "y":678},
     "up_left008" : {"StartState":"UP_LEFT", "x":14180, "y":378},
     "up070" : {"StartState":"UP", "x":14240, "y":378},
@@ -545,7 +543,6 @@
     "right007" : {"StartState":"RIGHT", "x":16100, "y":258},
     "right008" : {"StartState":"RIGHT", "x":16100, "y":318},
     "up_right009" : {"StartState":"UP_RIGHT", "x":16100, "y":378},
-
 
 
     "down000" : {"StartState":"DOWN", "x":16340, "y":600},
@@ -852,6 +849,8 @@
     "up_right010" : {"StartState":"UP_RIGHT", "x":24980, "y":318},
     "square027" : {"StartState":"SQUARE", "x":24980, "y":540},
     "down144" : {"StartState":"DOWN", "x":24980, "y":600},
+
+
     "non331" : {"StartState":"NONE_WALL", "x":25040, "y":198},
     "up113" : {"StartState":"UP", "x":25040, "y":258},
     "non332" : {"StartState":"NONE_WALL", "x":25100, "y":198},

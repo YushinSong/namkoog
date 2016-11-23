@@ -4,7 +4,7 @@ import game_framework
 
 import collision
 from soldier import Soldier
-from obstacle import Obstacle, create_obstacles
+from obstacle import Obstacle, create_obstacles_01, create_obstacles_02, create_obstacles_03
 from ground import BackGround, Ground
 from item import Change, create_changes
 from airplane import Airplane
@@ -13,12 +13,14 @@ from airplane import Airplane
 back, ground = None, None
 soldier, airplane, changes = None, None, None
 change, obstacles, obstacle = None, None, None
+FirstStage, SecondStage = True, False
+total_frame = 0.0
 air = False
 
 def create_world():
     global ground, soldier, back, airplane, change, obstacles, obstacle, changes
     changes = create_changes()
-    obstacles = create_obstacles()
+    obstacles = create_obstacles_01()
     obstacle = Obstacle()
     back = BackGround()
     ground = Ground()
@@ -67,9 +69,24 @@ def handle_events(frame_time):
             else:
                 airplane.handle_event(event)
 
-
 def update(frame_time):
-    global air
+    global air, obstacles, FirstStage, SecondStage, total_frame
+    total_frame += frame_time
+
+    if total_frame > 25.3:
+        if FirstStage == True:
+            obstacles = create_obstacles_02()
+            for obstacle in obstacles:
+                obstacle.total_frame = 25.3
+            FirstStage = False
+            SecondStage = True
+    if total_frame > 38.3:
+        if SecondStage == True:
+            obstacles = create_obstacles_03()
+            for obstacle in obstacles:
+                obstacle.total_frame = 38.3
+                SecondStage = False
+
     for ob in obstacles:
         ob.soldierX, ob.soldierY = soldier.x, soldier.y
         ob.update(frame_time)
@@ -107,12 +124,14 @@ def update(frame_time):
     for change in changes:
         if collision.Collide(soldier, change):
             if change.shape == 0:
+                airplane.x, airplane.y = soldier.x, soldier.y
                 soldier.over_y = False
                 ground.y_stop = False
                 air = True
         if collision.Collide(airplane, change):
             if change.shape == 1:
                 air = False
+                soldier.x, soldier.y = airplane.x, airplane.y
     if collision.Collide(soldier, ground):
         soldier.fall = False
     else:
@@ -154,7 +173,6 @@ def draw(frame_time):
         airplane.draw()
     for change in changes:
         change.draw()
-
 
     update_canvas()
 

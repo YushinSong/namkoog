@@ -16,7 +16,7 @@ class Airplane:
     image = None
 
     def __init__(self):
-        self.x, self.y = 450, 450
+        self.x, self.y = 450, 350
         self.frame, self.round_count_up, self.round_count_down = 2, 0, 0
         self.total_action = 0.0
         self.a = 0
