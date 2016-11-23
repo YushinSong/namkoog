@@ -1,73 +1,21 @@
-# coding: cp949
-def collisionIntersectRect(_object1, _object2):  # ¿Œ≈ÕºΩ∑∫∆Æ ø¿∫Í¡ß∆Æ µŒ∞≥
-                                                 # ¥Î√º ø÷ ¿Ã∑∏∞‘ «œ¥¬¡ˆ ∏∏£∞⁄¿Ω
-    # ∑π«¡∆Æ ≈æ ∂Û¿Ã∆Æ πŸ≈“
-    object1_x1, object1_y1, object1_x2, object1_y2 = _object1.getCollisionBox()  # ø¿∫Í¡ß∆Æ1 X, Y∞™
-    object2_x1, object2_y1, object2_x2, object2_y2 = _object2.getCollisionBox()  # ø¿∫Í¡ß∆Æ2 X, Y∞™
-    object3_x1, object3_y1, object3_x2, object3_y2 = 0, 0, 0, 0                  # ø¿∫Í¡ß∆Æ3 X, Y∞™ = 0
-                                                                                 # ø÷ ¿Ã∑∏∞‘ «ﬂ¿ª±Ó
 
-    if (object1_y1 >= object2_y2) and (object1_x2 >= object2_x1) Ç
-            and (object1_x1 <= object2_x2) and (object1_y2 <= object2_y1):  # ø¿∫Í¡ß∆Æ1¿« ≈æ¿Ã ø¿∫Í¡ß∆Æ2¿« πŸ≈“∫∏¥Ÿ ≈©∞Ì
-                                                                             # ø¿∫Í¡ß∆Æ1¿« ∂Û¿Ã∆Æ∞° ø¿∫Í¡ß∆Æ2¿« ∑π«¡∆Æ∫∏¥Ÿ ≈©∞Ì
-                                                                             # ø¿∫Í¡ß∆Æ1¿« ∑π«¡∆Æ∞° ø¿∫Í¡ß∆Æ2¿« ∂Û¿Ã∆Æ∫∏¥Ÿ ¿€∞Ì
-                                                                             # ø¿∫Í¡ß∆Æ1¿« πŸ≈“¿Ã ø¿∫Í¡ß∆Æ2¿« ≈æ∫∏¥Ÿ ¿€¿ª ∂ß
-                                                                             # π∫ º“∏Æø©
-        #top
-        if object1_y1 < object2_y1:         # ø¿∫Í¡ß∆Æ1¿« ≈æ¿Ã ø¿∫Í¡ß∆Æ2¿« ≈æ∫∏¥Ÿ ¿€¿ª ∂ß
-            object3_y1 = object1_y1         # ø¿∫Í¡ß∆Æ3¿« ≈æ = ø¿∫Í¡ß∆Æ 1¿« ≈æ
-        elif object1_y1 >= object2_y1:      # ø¿∫Í¡ß∆Æ1¿« ≈æ¿Ã ø¿∫Í¡ß∆Æ2¿« ≈æ∫∏¥Ÿ ≈¨ ∂ß
-            object3_y1 = object2_y1         # ø¿∫Í¡ß∆Æ3¿« ≈æ = ø¿∫Í¡ß∆Æ 2¿« ≈æ
-                                            # ¿€¿∫ ≈æ¿ª ø¿∫Í¡ß∆Æ3¿« ≈æø°∞‘ ≥—∞‹¡ÿ¥Ÿ
-        #bottom
-        if object1_y2 > object2_y2:         # ø¿∫Í¡ß∆Æ1¿« πŸ≈“¿Ã ø¿∫Í¡ß∆Æ2¿« πŸ≈“∫∏¥Ÿ ≈¨ ∂ß
-            object3_y2 = object1_y2         # ø¿∫Í¡ß∆Æ3¿« πŸ≈“ = ø¿∫Í¡ß∆Æ1¿« πŸ≈“
-        elif object1_y2 <= object2_y2:     # ø¿∫Í¡ß∆Æ1¿« πŸ≈“¿Ã ø¿∫Í¡ß∆Æ2¿« πŸ≈“∫∏¥Ÿ ¿€¿ª ∂ß
-            object3_y2 = object2_y2         # ø¿∫Í¡ß∆Æ3¿« πŸ≈“ = ø¿∫Í¡ß∆Æ2¿« πŸ≈“
-                                            # ≈´ πŸ≈“¿ª ø¿∫Í¡ß∆Æ3¿« πŸ≈“ø° ≥—∞‹¡ÿ¥Ÿ
-        #right
-        if object1_x2 < object2_x2:         # ø¿∫Í¡ß∆Æ1¿« ∂Û¿Ã∆Æ∞° ø¿∫Í¡ß∆Æ2¿« ∂Û¿Ã∆Æ∫∏¥Ÿ ¿€¿ª ∂ß
-            object3_x2 = object1_x2         # ø¿∫Í¡ß∆Æ3¿« ∂Û¿Ã∆Æ = ø¿∫Í¡ß∆Æ1¿« ∂Û¿Ã∆Æ
-        elif object1_x2 >= object2_x2:      # ø¿∫Í¡ß∆Æ1¿« ∂Û¿Ã∆Æ∞° ø¿∫Í¡ß∆Æ2¿« ∂Û¿Ã∆Æ∫∏¥Ÿ ≈¨ ∂ß
-            object3_x2 = object2_x2         # ø¿∫Í¡ß∆Æ3¿« ∂Û¿Ã∆Æ = ø¿∫Í¡ß∆Æ2¿« ∂Û¿Ã∆Æ
-                                            # ¿€¿∫ ∂Û¿Ã∆Æ∏¶ ø¿∫Í¡ß∆Æ3¿« ∂Û¿Ã∆Æø° ≥—∞‹¡ÿ¥Ÿ
-        #left
-        if object1_x1 > object2_x1:         # ø¿∫Í¡ß∆Æ1¿« ∑π«¡∆Æ∞° ø¿∫Í¡ß∆Æ2¿« ∑π«¡∆Æ∫∏¥Ÿ ≈¨ ∂ß
-            object3_x1 = object1_x1         # ø¿∫Í¡ß∆Æ3¿« ∑π«¡∆Æ = ø¿∫Í¡ß∆Æ1¿« ∑π«¡∆Æ
-        elif object1_x1 <= object2_x1:      # ø¿∫Í¡ß∆Æ1¿« ∑π«¡∆Æ∞° ø¿∫Í¡ß∆Æ2¿« ∑π«¡∆Æ∫∏¥Ÿ ¿€¿ª ∂ß
-            object3_x1 = object2_x1         # ø¿∫Í¡ß∆Æ3¿« ∑π«¡∆Æ = ø¿∫Í¡ß∆Æ2¿« ∑π«¡∆Æ
-                                            # ≈´ ∑π«¡∆Æ∏¶ ø¿∫Í¡ß∆Æ3¿« ∑π«¡∆Æø° ≥—∞‹¡ÿ¥Ÿ
-        return True, object3_x1, object3_y1, object3_x2, object3_y2  # πŸ≤Ô ø¿∫Í¡ß∆Æ3¿« ∞™ ≥—±‰¥Ÿ
-    return False, object3_x1, object3_y1, object3_x2, object3_y2    # 0¿Œ ø¿∫Í¡ß∆Æ3¿« ∞™ ≥—±‰¥Ÿ
+def Collide(a, b):
+    left_a, bottom_a, right_a, top_a = a.get_bb()
+    left_b, bottom_b, right_b, top_b = b.get_bb()
 
-def collisionPtInRect(_object, _x, _y):  # ««∆º¿Œ∑∫∆Æ ø¿∫Í¡ß∆Æ «—∞≥, x, y∞™
-    if (_object.X - (int)(_object.sizeX / 2) <= _x) and (_object.X + (int)(_object.sizeX / 2) >= _x):
-        if (_object.Y - (int)(_object.sizeY / 2) <= _y) and (_object.Y + (int)(_object.sizeY / 2) >= _y):
-            # ø¿∫Í¡ß∆Æ æ»ø° _x, _y∞° ¿÷¿ª Ω√
-            return True
-    return False
-
-def collisionAABB(_mainObject, _subObject, _left, _top, _right, _bottom):
-    # ∏ﬁ¿Œ ø¿∫Í¡ß∆Æ, º≠∫Íø¿∫Í¡ß∆Æ, ∑π«¡∆Æ ≈æ ∂Û¿Ã∆Æ πŸ≈“
-    # ø¿∫Í¡ß∆Æ3
-    if (_right - _left) > (_top - _bottom):
-        if _mainObject.Y < _subObject.Y:
-            _mainObject.Y -= (_top - _bottom)
-        else:
-            _mainObject.Y += (_top - _bottom)
-    else:
-        if _mainObject.X > _subObject.X:
-            _mainObject.X += (_right - _left)
-        else:
-            _mainObject.X -= (_right - _left)
-
-def collisionMiniIntersectRect(_object1, _object2):  # πÃ¥œπÃ¥œπˆ¿¸
-    object1_x1, object1_y1, object1_x2, object1_y2 = _object1.getCollisionBox()
-    object2_x1, object2_y1, object2_x2, object2_y2 = _object2.getCollisionBox()
-
-    if object1_x1 > object2_x2: return False
-    if object1_x2 < object2_x1: return False
-    if object1_y2 < object2_y1: return False
-    if object1_y1 > object2_y2: return False
-
+    if left_a > right_b: return False
+    if right_a < left_b: return False
+    if top_a < bottom_b: return False
+    if bottom_a > top_b: return False
     return True
+
+def TableCollide(a, b):
+    left_a, bottom_a, right_a, top_a = a.get_bb()
+    left_b, bottom_b, right_b, top_b = b.get_bb()
+
+    if left_a > right_b: return False
+    if right_a < left_b: return False
+    if top_a < bottom_b: return False
+    if bottom_a > top_b: return False
+    if top_b - 18 < bottom_a < top_b:
+        return True

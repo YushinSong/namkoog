@@ -99,7 +99,7 @@ class Obstacle:
     def update(self, frame_time):
         self.total_frame += frame_time
         distance = Obstacle.RUN_SPEED_PPS * frame_time
-        if self.total_frame >= 8000:#1.1:
+        if self.total_frame >= 1.1:
             self.x -= distance
         self.handle_state[self.shape](self)
 
@@ -165,7 +165,7 @@ def create_obstacles():
     for name in obstacle_data:
         ob = Obstacle()
         ob.name = name
-        ob.x = obstacle_data[name]['x'] - 33500
+        ob.x = obstacle_data[name]['x'] - 00
         ob.y = obstacle_data[name]['y']
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
         obstacle.append(ob)

@@ -1,6 +1,8 @@
 from pico2d import*
 import random
 
+# 25초, 40초
+
 class Obstacle:
     PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
     RUN_SPEED_KMPH = 3.4  # Km / Hour
@@ -11,7 +13,7 @@ class Obstacle:
 
     SQUARE, TRIANGLE, HALF_SQUARE, SPIKE = 0, 1, 2, 3
     NONE_WALL, UP_LEFT_RIGHT, UP_LEFT, LEFT_RIGHT = 4, 5, 6, 7
-    UP_RIGHT, UP, LEFT, RIGHT, DOWN = 8, 9, 10, 11, 12
+    UP_RIGHT, UP, LEFT, RIGHT, DOWN, DOWN_TRIANGLE = 8, 9, 10, 11, 12, 13
     image = None
 
     def __init__(self):
@@ -48,7 +50,7 @@ class Obstacle:
         self.frame, self.state = 191, 403
         self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
     def up_left_right(self):
-        self.frame, self.state = 285, 405
+        self.frame, self.state = 284, 404
         self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
     def up_left(self):
         self.frame, self.state = 383, 399
@@ -63,13 +65,16 @@ class Obstacle:
         self.frame, self.state = 297, 301
         self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
     def left(self):
-        self.frame, self.state = 4, 195
+        self.frame, self.state = 6, 195
         self.wid, self.hei, self.rwid, self.rhei = 95, 95, 64, 64
     def right(self):
         self.frame, self.state = 103, 198
         self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
     def down(self):
         self.frame, self.state = 398, 62
+        self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
+    def down_triangle(self):
+        self.frame, self.state = 300, 205
         self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
 
 
@@ -87,7 +92,8 @@ class Obstacle:
         UP: up,
         LEFT: left,
         RIGHT: right,
-        DOWN: down
+        DOWN: down,
+        DOWN_TRIANGLE: down_triangle
     }
 
     def update(self, frame_time):
@@ -118,7 +124,7 @@ class Obstacle:
     def get_bb(self):
         if self.shape in (0, 5, 6, 7, 8, 9, 10, 11, 12):
             return self.x - 30, self.y - 28, self.x + 30, self.y + 31
-        elif self.shape == 1:
+        elif self.shape in (1, 13):
             return self.x - 10, self.y - 28, self.x + 10, self.y + 25
         elif self.shape == 2:
             return self.x - 30, self.y, self.x + 30, self.y + 31
@@ -148,7 +154,8 @@ def create_obstacles():
         "UP": Obstacle.UP,
         "LEFT": Obstacle.LEFT,
         "RIGHT": Obstacle.RIGHT,
-        "DOWN": Obstacle.DOWN
+        "DOWN": Obstacle.DOWN,
+        "DOWN_TRIANGLE": Obstacle.DOWN_TRIANGLE
     }
     obstacle_data_file = open('ob_data\\obstacle_data.txt', 'r')
     obstacle_data = json.load(obstacle_data_file)
@@ -158,7 +165,7 @@ def create_obstacles():
     for name in obstacle_data:
         ob = Obstacle()
         ob.name = name
-        ob.x = obstacle_data[name]['x'] - 000
+        ob.x = obstacle_data[name]['x'] - 00
         ob.y = obstacle_data[name]['y']
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
         obstacle.append(ob)
