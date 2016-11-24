@@ -197,8 +197,40 @@ def create_obstacles_02():
     for name in obstacle_data:
         ob = Obstacle()
         ob.name = name
-        ob.x = obstacle_data[name]['x'] - 24600 #24600
-        ob.y = obstacle_data[name]['y']
+        ob.x = obstacle_data[name]['x'] - 16000
+        ob.y = obstacle_data[name]['y'] + 3
+        ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
+        obstacle.append(ob)
+
+    return obstacle
+
+def create_obstacles_03():
+    obstacle_state_table = {
+        "SQUARE": Obstacle.SQUARE,
+        "TRIANGLE": Obstacle.TRIANGLE,
+        "HALF_SQUARE": Obstacle.HALF_SQUARE,
+        "SPIKE": Obstacle.SPIKE,
+        "NONE_WALL": Obstacle.NONE_WALL,
+        "UP_LEFT_RIGHT": Obstacle.UP_LEFT_RIGHT,
+        "UP_LEFT": Obstacle.UP_LEFT,
+        "LEFT_RIGHT": Obstacle.LEFT_RIGHT,
+        "UP_RIGHT": Obstacle.UP_RIGHT,
+        "UP": Obstacle.UP,
+        "LEFT": Obstacle.LEFT,
+        "RIGHT": Obstacle.RIGHT,
+        "DOWN": Obstacle.DOWN,
+        "DOWN_TRIANGLE": Obstacle.DOWN_TRIANGLE
+    }
+    obstacle_data_file = open('ob_data\\obstacle_data_03.txt', 'r')
+    obstacle_data = json.load(obstacle_data_file)
+    obstacle_data_file.close()
+
+    obstacle = []
+    for name in obstacle_data:
+        ob = Obstacle()
+        ob.name = name
+        ob.x = obstacle_data[name]['x'] - 24120 #24120
+        ob.y = obstacle_data[name]['y'] + 4
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
         obstacle.append(ob)
 

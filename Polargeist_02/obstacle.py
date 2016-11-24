@@ -197,8 +197,8 @@ def create_obstacles_02():
     for name in obstacle_data:
         ob = Obstacle()
         ob.name = name
-        ob.x = obstacle_data[name]['x'] - 16000 #24600
-        ob.y = obstacle_data[name]['y']
+        ob.x = obstacle_data[name]['x'] - 16000
+        ob.y = obstacle_data[name]['y'] + 3
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
         obstacle.append(ob)
 
@@ -229,8 +229,8 @@ def create_obstacles_03():
     for name in obstacle_data:
         ob = Obstacle()
         ob.name = name
-        ob.x = obstacle_data[name]['x'] - 24600 #24600
-        ob.y = obstacle_data[name]['y'] + 3
+        ob.x = obstacle_data[name]['x'] - 24120 #24120
+        ob.y = obstacle_data[name]['y'] + 4
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
         obstacle.append(ob)
 
