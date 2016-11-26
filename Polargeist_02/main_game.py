@@ -4,21 +4,23 @@ import game_framework
 
 import collision
 from soldier import Soldier
-from obstacle import Obstacle, create_obstacles_01, create_obstacles_02, create_obstacles_03
+from obstacle import Obstacle, create_obstacles_01, create_obstacles_02, create_obstacles_03, create_obstacles_04
 from ground import BackGround, Ground
 from item import Change, create_changes
+from end_line import EndLine
 from airplane import Airplane
 
 
-back, ground = None, None
+back, ground, end = None, None, None
 soldier, airplane, changes = None, None, None
 change, obstacles, obstacle = None, None, None
-FirstStage, SecondStage = True, False
+FirstStage, SecondStage, ThirdStage = True, False, False
 total_frame = 0.0
 air = False
 
 def create_world():
-    global ground, soldier, back, airplane, change, obstacles, obstacle, changes
+    global ground, soldier, back, airplane, change, obstacles, obstacle, changes, end
+    end = EndLine()
     changes = create_changes()
     obstacles = create_obstacles_01()
     obstacle = Obstacle()
@@ -70,7 +72,7 @@ def handle_events(frame_time):
                 airplane.handle_event(event)
 
 def update(frame_time):
-    global air, obstacles, FirstStage, SecondStage, total_frame
+    global air, obstacles, FirstStage, SecondStage, ThirdStage, total_frame
     total_frame += frame_time
 
     if total_frame > 25.3:
@@ -85,7 +87,14 @@ def update(frame_time):
             obstacles = create_obstacles_03()
             for obstacle in obstacles:
                 obstacle.total_frame = 38.3
-                SecondStage = False
+            SecondStage = False
+            ThirdStage = True
+    if total_frame > 74:
+        if ThirdStage == True:
+            obstacles = create_obstacles_04()
+            for obstacle in obstacles:
+                obstacle.total_frame = 74
+            ThirdStage = False
 
     for ob in obstacles:
         ob.soldierX, ob.soldierY = soldier.x, soldier.y
@@ -144,15 +153,16 @@ def update(frame_time):
     else:
         for obstacle in obstacles:
             if obstacle.collinearby == True:
-                if collision.TableCollide(airplane, obstacle) == False:
+                if collision.Collide(airplane, obstacle) == False:
                         airplane.stop = False
     for obstacle in obstacles:
         if obstacle.collinearby == True:
             if collision.TableCollide(soldier, obstacle):
                 if obstacle.shape in (0, 2, 5, 6, 7, 8, 9, 10, 11):
                     soldier.fall = False
-            if collision.TableCollide(airplane, obstacle):
+            if collision.Collide(airplane, obstacle):
                 if obstacle.shape in (0, 2, 5, 6, 7, 8, 9, 10, 11):
+                    print("collision")
                     airplane.stop = True
 
 
@@ -171,6 +181,7 @@ def draw(frame_time):
         soldier.draw()
     else:
         airplane.draw()
+    end.draw()
     for change in changes:
         change.draw()
 

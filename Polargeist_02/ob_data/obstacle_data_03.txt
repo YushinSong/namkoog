@@ -547,5 +547,19 @@
     "spike275" : {"StartState":"SPIKE", "x":47980, "y":168},
     "half130" : {"StartState":"HALF_SQUARE", "x":47980, "y":198},
     "spike276" : {"StartState":"SPIKE", "x":48040, "y":168},
-    "half131" : {"StartState":"HALF_SQUARE", "x":48040, "y":198}
+    "half131" : {"StartState":"HALF_SQUARE", "x":48040, "y":198},
+
+
+    "square028" : {"StartState":"SQUARE", "x":47980, "y":600},
+    "down145" : {"StartState":"DOWN", "x":48040, "y":600},
+    "down146" : {"StartState":"DOWN", "x":48100, "y":600},
+    "down147" : {"StartState":"DOWN", "x":48160, "y":600},
+    "down148" : {"StartState":"DOWN", "x":48220, "y":600},
+    "down149" : {"StartState":"DOWN", "x":48280, "y":600},
+    "down150" : {"StartState":"DOWN", "x":48340, "y":600},
+    "down151" : {"StartState":"DOWN", "x":48400, "y":600},
+    "down152" : {"StartState":"DOWN", "x":48460, "y":600},
+    "down153" : {"StartState":"DOWN", "x":48520, "y":600},
+    "down154" : {"StartState":"DOWN", "x":48580, "y":600},
+    "down155" : {"StartState":"DOWN", "x":48640, "y":600}
 }
