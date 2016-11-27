@@ -27,7 +27,7 @@ class Change:
         distance = Change.RUN_SPEED_PPS * frame_time
         self.total_frame += frame_time
         self.handle_state[self.shape](self)
-        if self.total_frame >= 1.1:
+        if 85 > self.total_frame >= 1.1:
             self.x -= distance
 
         if self.over_y == True:

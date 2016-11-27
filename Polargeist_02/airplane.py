@@ -11,7 +11,8 @@ class Airplane:
     TIME_PER_ACTION = 0.5
     ACTION_PER_TIME = 1.5 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 8
-    UP_ACTION_PER_TIME = 0.1 / TIME_PER_ACTION
+    UP_TIME_PER_ACTION = 1.0
+    UP_ACTION_PER_TIME = 0.1 / UP_TIME_PER_ACTION
     UP_FRAMES_PER_ACTION = 8
     image = None
 
@@ -52,7 +53,7 @@ class Airplane:
             self.up = False
 
     def get_bb(self):
-        return self.x - 28, self.y - 20, self.x + 27, self.y + 20
+        return self.x - 28, self.y - 20, self.x + 27, self.y + 25
 
     def draw_bb(self):
         draw_rectangle(*self.get_bb())

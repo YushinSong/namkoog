@@ -99,7 +99,7 @@ class Obstacle:
     def update(self, frame_time):
         self.total_frame += frame_time
         distance = Obstacle.RUN_SPEED_PPS * frame_time
-        if self.total_frame >= 1.1:
+        if 85 > self.total_frame >= 1.1:
             self.x -= distance
         self.handle_state[self.shape](self)
 

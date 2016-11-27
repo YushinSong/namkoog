@@ -103,20 +103,20 @@ def update(frame_time):
 def draw(frame_time):
     clear_canvas()
     back.draw()
+    end.draw()
     for change in changes:
         change.back_draw()
     for ob in obstacles:
         if ob.nearby == True:
             ob.draw()
-            ob.draw_bb()
+            #ob.draw_bb()
     ground.draw()
     #ground.draw_bb()
     if air == False:
         soldier.draw()
     else:
         airplane.draw()
-    end.draw()
-    soldier.draw_bb()
+    #soldier.draw_bb()
     #airplane.draw_bb()
     for change in changes:
         change.draw()
@@ -193,6 +193,7 @@ def stage(frame_time):
     global air, obstacles, FirstStage, SecondStage, ThirdStage, total_frame
     total_frame += frame_time
 
+    soldier.total_frame = total_frame
     if total_frame > 25.3:
         if FirstStage == True:
             obstacles = create_obstacles_02()
