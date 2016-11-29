@@ -54,7 +54,7 @@ class Soldier:
                     else:
                         self.count = 0
                         self.fall = True
-                        self.jumping = False
+                        #self.jumping = False
         else:
             if (0 <= self.frame <= 5 or 41 <= self.frame <= 45):
                 self.frame = 0
@@ -75,6 +75,8 @@ class Soldier:
     def handle_event(self, event):
         if event.type == SDL_MOUSEBUTTONDOWN and self.fall == False:
             self.jumping = True
+        if event.type == SDL_MOUSEBUTTONUP:
+            self.jumping = False
 
     def get_bb(self):
         return self.x - 28, self.y - 45, self.x + 27, self.y + 15
@@ -84,5 +86,4 @@ class Soldier:
 
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
-        #self.draw_bb()
 
