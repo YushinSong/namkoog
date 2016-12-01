@@ -109,7 +109,7 @@ class Obstacle:
             self.nearby = True
         else:
             self.nearby = False
-        if self.tempdistance < 100:
+        if self.tempdistance < 150:
             self.collinearby = True
         else:
             self.collinearby = False
@@ -123,11 +123,11 @@ class Obstacle:
 
     def get_bb(self):
         if self.shape in (0, 5, 6, 7, 8, 9, 10, 11, 12):
-            return self.x - 30, self.y - 28, self.x + 30, self.y + 31
+            return self.x - 40, self.y - 28, self.x + 40, self.y + 31
         elif self.shape in (1, 13):
             return self.x - 10, self.y - 28, self.x + 10, self.y + 25
         elif self.shape == 2:
-            return self.x - 30, self.y, self.x + 30, self.y + 31
+            return self.x - 40, self.y, self.x + 40, self.y + 31
         elif self.shape == 3:
             return self.x - 30, self.y - 28, self.x + 30, self.y + 10
         else:
