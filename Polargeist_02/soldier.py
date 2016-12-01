@@ -27,7 +27,7 @@ class Soldier:
         self.over_y, self.notover_y = False, 0
         self.jumping = False
         self.rebirth = False
-        self.fall = False
+        self.fall, self.keep = False, False
         if Soldier.image == None:
             Soldier.image = load_image('Character\\soldier76.png')
 
@@ -54,7 +54,7 @@ class Soldier:
                     else:
                         self.count = 0
                         self.fall = True
-                        #self.jumping = False
+                        self.jumping = False
         else:
             if (0 <= self.frame <= 5 or 41 <= self.frame <= 45):
                 self.frame = 0
@@ -75,8 +75,9 @@ class Soldier:
     def handle_event(self, event):
         if event.type == SDL_MOUSEBUTTONDOWN and self.fall == False:
             self.jumping = True
-        if event.type == SDL_MOUSEBUTTONUP:
-            self.jumping = False
+            self.keep = True
+        elif event.type == SDL_MOUSEBUTTONUP:
+            self.keep = False
 
     def get_bb(self):
         return self.x - 28, self.y - 45, self.x + 27, self.y + 15

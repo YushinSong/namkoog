@@ -177,6 +177,8 @@ def collision_soldier(frame_time):
                 ground.y_stop = False
                 air = True
     if collision.Collide(soldier, ground):
+        if soldier.keep == True:
+            soldier.jumping = True
         soldier.fall = False
     else:
         for obstacle in obstacles:
@@ -188,6 +190,8 @@ def collision_soldier(frame_time):
             if collision.TableCollide(soldier, obstacle):
                 if obstacle.shape in (0, 2, 5, 6, 7, 8, 9, 10, 11):
                     soldier.fall = False
+                    if soldier.keep == True:
+                        soldier.jumping = True
 
 def stage(frame_time):
     global air, obstacles, FirstStage, SecondStage, ThirdStage, total_frame
