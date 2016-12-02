@@ -138,7 +138,6 @@ class Obstacle:
 
     def draw(self):
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
-        #self.draw_bb()
 
 def create_obstacles_01():
     obstacle_state_table = {
