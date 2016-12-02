@@ -46,7 +46,7 @@ class Soldier:
             if self.jumping == True:
                 if self.count == 0:
                     self.count = self.total_frame
-                    self.count_over = self.count + 0.20
+                    self.count_over = self.count + 0.22
                 else:
                     if self.total_frame < self.count_over:
                         if self.over_y == False:
