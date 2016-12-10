@@ -176,6 +176,8 @@ def collision_soldier(frame_time):
                 soldier.over_y = False
                 ground.y_stop = False
                 air = True
+
+
     if collision.Collide(soldier, ground):
         if soldier.keep == True:
             soldier.jumping = True
