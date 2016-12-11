@@ -103,6 +103,7 @@ class Obstacle:
             self.x -= distance
         self.handle_state[self.shape](self)
 
+
         tempX, tempY = self.x - self.soldierX, self.y - self.soldierY
         self.tempdistance = math.sqrt((tempX * tempX) + (tempY * tempY))
         if self.tempdistance < 1100:
