@@ -23,6 +23,7 @@ class Obstacle:
         self.total_frame, self.count, self.count_over = 0.0, 0, 0
         self.soldierX, self.soldierY = 0, 0
         self.nearby, self.collinearby = False, False
+        self.dead = False
         self.y_distance = 0.0
         self.shape = 0
         self.total_frame = 0.0
@@ -99,8 +100,9 @@ class Obstacle:
     def update(self, frame_time):
         self.total_frame += frame_time
         distance = Obstacle.RUN_SPEED_PPS * frame_time
-        if 85 > self.total_frame >= 1.1:
-            self.x -= distance
+        if self.dead == False:
+            if 85 > self.total_frame >= 1.1:
+                self.x -= distance
         self.handle_state[self.shape](self)
 
 
@@ -126,13 +128,16 @@ class Obstacle:
         if self.shape in (0, 5, 6, 7, 8, 9, 10, 11, 12):
             return self.x - 42, self.y - 28, self.x + 42, self.y + 31
         elif self.shape in (1, 13):
-            return self.x - 10, self.y - 28, self.x + 10, self.y + 25
+            return self.x - 10, self.y - 28, self.x + 10, self.y + 15
         elif self.shape == 2:
             return self.x - 42, self.y, self.x + 42, self.y + 31
         elif self.shape == 3:
             return self.x - 30, self.y - 28, self.x + 30, self.y + 10
         else:
             return 0, 0, 0, 0
+
+    def death(self):
+        self.dead = True
 
     def draw_bb(self):
         draw_rectangle(*self.get_bb())

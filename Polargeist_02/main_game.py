@@ -100,6 +100,7 @@ def update(frame_time):
 
 
 
+
 def draw(frame_time):
     clear_canvas()
     back.draw()
@@ -109,7 +110,7 @@ def draw(frame_time):
     for ob in obstacles:
         if ob.nearby == True:
             ob.draw()
-            #ob.draw_bb()
+            ob.draw_bb()
     ground.draw()
     #ground.draw_bb()
     if air == False:
@@ -194,12 +195,22 @@ def collision_soldier(frame_time):
                     soldier.fall = False
                     if soldier.keep == True:
                         soldier.jumping = True
+            if collision.Collide(soldier, obstacle):
+                if obstacle.shape in (1, 13):
+                    soldier.death()
+                    ground.death()
+                    back.death()
+                    for obstacle in obstacles:
+                        obstacle.death()
+                    soldier.fall = False
+                    if soldier.keep == True:
+                        soldier.jumping = True
 
 def stage(frame_time):
     global air, obstacles, FirstStage, SecondStage, ThirdStage, total_frame
-    total_frame += frame_time
 
-    soldier.total_frame = total_frame
+    total_frame = soldier.total_frame
+    print(total_frame)
     if total_frame > 25.3:
         if FirstStage == True:
             obstacles = create_obstacles_02()

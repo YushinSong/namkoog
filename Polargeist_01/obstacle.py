@@ -30,7 +30,7 @@ class Obstacle:
             Obstacle.image = load_image('Ground\\obstacle.png')
 
     def square(self):
-        self.frame, self.state = 0, 405
+        self.frame, self.state = 1, 405
         self.wid, self.hei, self.rwid, self.rhei = 95, 95, 65, 65
     def triangle(self):
         self.frame, self.state = 94, 405
@@ -99,9 +99,10 @@ class Obstacle:
     def update(self, frame_time):
         self.total_frame += frame_time
         distance = Obstacle.RUN_SPEED_PPS * frame_time
-        if self.total_frame >= 1.1:
+        if 85 > self.total_frame >= 1.1:
             self.x -= distance
         self.handle_state[self.shape](self)
+
 
         tempX, tempY = self.x - self.soldierX, self.y - self.soldierY
         self.tempdistance = math.sqrt((tempX * tempX) + (tempY * tempY))
@@ -109,7 +110,7 @@ class Obstacle:
             self.nearby = True
         else:
             self.nearby = False
-        if self.tempdistance < 100:
+        if self.tempdistance < 150:
             self.collinearby = True
         else:
             self.collinearby = False
@@ -123,11 +124,11 @@ class Obstacle:
 
     def get_bb(self):
         if self.shape in (0, 5, 6, 7, 8, 9, 10, 11, 12):
-            return self.x - 30, self.y - 28, self.x + 30, self.y + 31
+            return self.x - 42, self.y - 28, self.x + 42, self.y + 31
         elif self.shape in (1, 13):
             return self.x - 10, self.y - 28, self.x + 10, self.y + 25
         elif self.shape == 2:
-            return self.x - 30, self.y, self.x + 30, self.y + 31
+            return self.x - 42, self.y, self.x + 42, self.y + 31
         elif self.shape == 3:
             return self.x - 30, self.y - 28, self.x + 30, self.y + 10
         else:
@@ -138,7 +139,6 @@ class Obstacle:
 
     def draw(self):
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)
-        #self.draw_bb()
 
 def create_obstacles_01():
     obstacle_state_table = {
@@ -230,7 +230,39 @@ def create_obstacles_03():
         ob = Obstacle()
         ob.name = name
         ob.x = obstacle_data[name]['x'] - 24120 #24120
-        ob.y = obstacle_data[name]['y'] + 4
+        ob.y = obstacle_data[name]['y'] + 3
+        ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
+        obstacle.append(ob)
+
+    return obstacle
+
+def create_obstacles_04():
+    obstacle_state_table = {
+        "SQUARE": Obstacle.SQUARE,
+        "TRIANGLE": Obstacle.TRIANGLE,
+        "HALF_SQUARE": Obstacle.HALF_SQUARE,
+        "SPIKE": Obstacle.SPIKE,
+        "NONE_WALL": Obstacle.NONE_WALL,
+        "UP_LEFT_RIGHT": Obstacle.UP_LEFT_RIGHT,
+        "UP_LEFT": Obstacle.UP_LEFT,
+        "LEFT_RIGHT": Obstacle.LEFT_RIGHT,
+        "UP_RIGHT": Obstacle.UP_RIGHT,
+        "UP": Obstacle.UP,
+        "LEFT": Obstacle.LEFT,
+        "RIGHT": Obstacle.RIGHT,
+        "DOWN": Obstacle.DOWN,
+        "DOWN_TRIANGLE": Obstacle.DOWN_TRIANGLE
+    }
+    obstacle_data_file = open('ob_data\\obstacle_data_04.txt', 'r')
+    obstacle_data = json.load(obstacle_data_file)
+    obstacle_data_file.close()
+
+    obstacle = []
+    for name in obstacle_data:
+        ob = Obstacle()
+        ob.name = name
+        ob.x = obstacle_data[name]['x'] - 47720 #47720
+        ob.y = obstacle_data[name]['y'] + 2
         ob.shape = obstacle_state_table[obstacle_data[name]['StartState']]
         obstacle.append(ob)
 

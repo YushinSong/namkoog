@@ -22,11 +22,16 @@ class Soldier:
 
     def __init__(self):
         self.x, self.y = -300, 215
+        self.bgm = load_music('song\\StereoMadness.mp3')
+        self.bgm.set_volume(64)
+        self.dead_bgm = load_music('song\\explode.mp3')
+        self.dead_bgm.set_volume(64)
+        self.bgm.play(1)
         self.frame, self.count, self.round_count, self.count_over = 0, 0, 0, 0
-        self.total_frame, self.total_action, self.y_distance = 0.0, 0, 0.0
+        self.total_frame, self.total_action, self.y_distance, self.dead_time = 0.0, 0, 0.0, 0
         self.over_y, self.notover_y = False, 0
         self.jumping = False
-        self.rebirth = False
+        self.dead, self.rebirth = False, False
         self.fall, self.keep = False, False
         if Soldier.image == None:
             Soldier.image = load_image('Character\\soldier76.png')
@@ -71,6 +76,19 @@ class Soldier:
         if 85 > self.total_frame < 1.1:
             self.x += distance
         self.jump(frame_time)
+        #print(self.total_frame)
+
+    def death(self):
+        if self.dead == False:
+            self.bgm.stop()
+            self.dead_bgm.play(1)
+            self.dead_time = self.total_frame
+        self.dead = True
+        if (self.total_frame - self.dead_time) > 3:
+            self.x, self.y = -300, 215
+            self.total_frame = 0.0
+            self.bgm.play(1)
+            self.dead = False
 
     def handle_event(self, event):
         if event.type == SDL_MOUSEBUTTONDOWN and self.fall == False:
@@ -86,5 +104,6 @@ class Soldier:
         draw_rectangle(*self.get_bb())
 
     def draw(self):
-        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
+        if self.dead == False:
+            self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
 
