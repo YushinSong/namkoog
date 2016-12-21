@@ -2,6 +2,7 @@ from pico2d import*
 
 
 class BackGround:
+    #1초에 0.08미터
     PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
     RUN_SPEED_KMPH = 0.3  # Km / Hour
     RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)  # mpm = 1분에 몇미터
@@ -13,9 +14,7 @@ class BackGround:
 
     def __init__(self):
         self.x = 550
-        self.bgm = load_music('song\\StereoMadness.mp3')
-        self.bgm.set_volume(64)
-        self.bgm.play(1)
+        self.dead = False
         self.total_frame = 0.0
         if BackGround.image == None:
             BackGround.image = load_image('Ground\\background.png')
@@ -27,14 +26,20 @@ class BackGround:
         distance = BackGround.RUN_SPEED_PPS * frame_time
         self.total_frame += frame_time
 
-        if 85 > self.total_frame >= 1.5:
-            self.x -= distance
-            if self.x < -550:
-                self.x = 550
+        if self.dead == False:
+            if 85 > self.total_frame >= 1.5:
+                self.x -= distance
+                if self.x < -550:
+                    self.x = 550
 
-    def stop(self):
+    def death(self):
+        if self.dead == False:
+            self.dead_time = self.total_frame
         self.dead = True
-
+        if (self.total_frame - self.dead_time) > 2.5:
+            self.x = 550
+            self.total_frame = 0.0
+            self.dead = False
 
     def draw(self):
         if self.total_frame < 13.8 or self.total_frame > 24.8:
@@ -59,6 +64,7 @@ class Ground:
         self.total_frame = 0.0
         self.over_y, self.jumping, self.fall = False, False, False
         self.notice_for_soldier, self.dead = True, False
+        self.dead = False
         self.y_distance = 0.0
         if Ground.image == None:
             Ground.image = load_image('Ground\\ground.png')
@@ -70,10 +76,11 @@ class Ground:
         distance = Ground.RUN_SPEED_PPS * frame_time
         self.total_frame += frame_time
 
-        if 85 > self.total_frame >= 1.1:
-            self.x -= distance
-            if self.x < 300:
-                self.x = 815
+        if self.dead == False:
+            if 85 > self.total_frame >= 1.1:
+                self.x -= distance
+                if self.x < 300:
+                    self.x = 815
         if self.over_y == True:
             if self.jumping == True:
                 self.y -= self.y_distance
@@ -83,6 +90,15 @@ class Ground:
                     self.notice_for_soldier = False
                 else:
                     self.notice_for_soldier = True
+
+    def death(self):
+        if self.dead == False:
+            self.dead_time = self.total_frame
+        self.dead = True
+        if (self.total_frame - self.dead_time) > 2.5:
+            self.x, self.y = 900, 70
+            self.total_frame = 0.0
+            self.dead = False
 
     def draw(self):
         if self.total_frame < 13.8 or self.total_frame > 24.8:

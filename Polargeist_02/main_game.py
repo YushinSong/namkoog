@@ -3,6 +3,7 @@ from pico2d import*
 import game_framework
 
 import collision
+import rebirth
 from soldier import Soldier
 from obstacle import Obstacle, create_obstacles_01, create_obstacles_02, create_obstacles_03, create_obstacles_04
 from ground import BackGround, Ground
@@ -20,9 +21,8 @@ air = False
 
 def create_world():
     global ground, soldier, back, airplane, change, obstacles, obstacle, changes, end
+    birth()
     end = EndLine()
-    changes = create_changes()
-    obstacles = create_obstacles_01()
     obstacle = Obstacle()
     back = BackGround()
     ground = Ground()
@@ -30,14 +30,22 @@ def create_world():
     change = Change()
     airplane = Airplane()
 
-def destroy_world():
-    global ground, soldier, back, airplane, change
+def birth():
+    global obstacles, changes
+    obstacles = create_obstacles_01()
+    changes = create_changes()
 
+def destroy_world():
+    global ground, soldier, back, airplane, change, obstacles, obstacle, changes, end
     del(ground)
     del(soldier)
     del(back)
     del(airplane)
     del(change)
+    del(changes)
+    del(obstacles)
+    del(obstacle)
+    del(end)
 
 def enter():
     open_canvas(1100, 600)
@@ -46,7 +54,6 @@ def enter():
 
 def exit():
     destroy_world()
-    close_canvas()
 
 
 def pause():
@@ -74,6 +81,12 @@ def handle_events(frame_time):
 
 def update(frame_time):
     global air
+
+    if soldier.rebirth == True:
+        birth()
+        ground.notice_for_soldier = True
+        soldier.rebirth = False
+
     ground.update(frame_time)
     back.update(frame_time)
     end.update(frame_time)
@@ -93,6 +106,7 @@ def update(frame_time):
         if ground.notice_for_soldier == False:
             soldier.over_y = True
         airplane.update(frame_time)
+        soldier.total_frame += frame_time
         collision_airplane(frame_time)
 
     for change in changes:
@@ -146,6 +160,20 @@ def collision_airplane(frame_time):
             if collision.DownCollide(airplane, obstacle):
                 if obstacle.shape in (0, 2, 5, 6, 7, 8, 9, 10, 11, 12):
                     airplane.upstop = True
+            if collision.Collide(airplane, obstacle):
+                if obstacle.shape in (1, 13):
+                    airplane.death()
+                    #air = False
+                    #soldier.death()
+                    ground.death()
+                    back.death()
+                    for obstacle in obstacles:
+                        obstacle.death()
+                    for change in changes:
+                        change.death()
+                    soldier.fall = False
+                    if soldier.keep == True:
+                        soldier.jumping = True
 
 
 def collision_soldier(frame_time):
@@ -194,12 +222,25 @@ def collision_soldier(frame_time):
                     soldier.fall = False
                     if soldier.keep == True:
                         soldier.jumping = True
+            if collision.Collide(soldier, obstacle):
+                if obstacle.shape in (1, 13):
+                    soldier.death()
+                    ground.death()
+                    back.death()
+                    for obstacle in obstacles:
+                        obstacle.death()
+                    for change in changes:
+                        change.death()
+                    soldier.fall = False
+                    if soldier.keep == True:
+                        soldier.jumping = True
 
 def stage(frame_time):
     global air, obstacles, FirstStage, SecondStage, ThirdStage, total_frame
-    total_frame += frame_time
 
-    soldier.total_frame = total_frame
+    if soldier.dead == False:
+        total_frame = soldier.total_frame
+
     if total_frame > 25.3:
         if FirstStage == True:
             obstacles = create_obstacles_02()

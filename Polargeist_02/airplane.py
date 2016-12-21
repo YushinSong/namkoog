@@ -21,29 +21,44 @@ class Airplane:
         self.frame, self.round_count_up, self.round_count_down = 2, 0, 0
         self.total_action = 0.0
         self.a = 0
-        self.up, self.stop, self.upstop = False, False, False
+        self.up, self.stop, self.upstop, self.dead = False, False, False, False
         if Airplane.image == None:
             Airplane.image = load_image('Character\\airplane.png')
 
     def update(self, frame_time):
         distance = (Airplane.RUN_SPEED_PPS + self.a) * frame_time
-        if self.stop == False and self.upstop == False:
-            if self.up == False:
-                if self.frame < 15:
-                    self.total_action += Airplane.FRAMES_PER_ACTION * Airplane.ACTION_PER_TIME * frame_time
-                    self.frame = int(self.total_action) % 25
-                self.y -= distance
-            else:
-                if self.frame > 0:
-                    self.total_action -= Airplane.UP_FRAMES_PER_ACTION * Airplane.ACTION_PER_TIME * frame_time
-                    self.frame = int(self.total_action) % 25
-                self.y += distance
-        elif self.stop == True:
-            self.frame = 2
-        elif self.upstop == True:
-            self.frame = 2
-            if self.up == False:
-                self.y -= distance
+        if self.dead == False:
+            if self.stop == False and self.upstop == False:
+                if self.up == False:
+                    if self.frame < 15:
+                        self.total_action += Airplane.FRAMES_PER_ACTION * Airplane.ACTION_PER_TIME * frame_time
+                        self.frame = int(self.total_action) % 25
+                    self.y -= distance
+                else:
+                    if self.frame > 0:
+                        self.total_action -= Airplane.UP_FRAMES_PER_ACTION * Airplane.ACTION_PER_TIME * frame_time
+                        self.frame = int(self.total_action) % 25
+                    self.y += distance
+            elif self.stop == True:
+                self.frame = 2
+            elif self.upstop == True:
+                self.frame = 2
+                if self.up == False:
+                    self.y -= distance
+
+    def death(self):
+        print("dead")
+        #if self.dead == False:
+            #self.bgm.stop()
+            #self.dead_bgm.play(1)
+            #self.dead_time = self.total_frame
+        self.dead = True
+        #if (self.total_frame - self.dead_time) > 2.5:
+            #self.x, self.y = -300, 215
+            #self.total_frame = 0.0
+            #self.bgm.play(1)
+            #self.dead = False
+            #self.rebirth = True
 
     def handle_event(self, event):
         if event.type == SDL_MOUSEBUTTONDOWN:
@@ -59,4 +74,5 @@ class Airplane:
         draw_rectangle(*self.get_bb())
 
     def draw(self):
-        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
+        if self.dead == False:
+            self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y, 90, 90)
