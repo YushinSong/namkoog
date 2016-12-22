@@ -2,6 +2,7 @@ from pico2d import*
 
 
 class BackGround:
+    #1초에 0.08미터
     PIXEL_PER_METER = (70.0 / 0.1)  # 10 pixel 30cm
     RUN_SPEED_KMPH = 0.3  # Km / Hour
     RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)  # mpm = 1분에 몇미터
@@ -13,9 +14,7 @@ class BackGround:
 
     def __init__(self):
         self.x = 550
-        self.bgm = load_music('song\\StereoMadness.mp3')
-        self.bgm.set_volume(64)
-        self.bgm.play(1)
+
         self.total_frame = 0.0
         if BackGround.image == None:
             BackGround.image = load_image('Ground\\background.png')
@@ -27,7 +26,7 @@ class BackGround:
         distance = BackGround.RUN_SPEED_PPS * frame_time
         self.total_frame += frame_time
 
-        if self.total_frame >= 1.5:
+        if 85 > self.total_frame >= 1.5:
             self.x -= distance
             if self.x < -550:
                 self.x = 550
@@ -70,7 +69,7 @@ class Ground:
         distance = Ground.RUN_SPEED_PPS * frame_time
         self.total_frame += frame_time
 
-        if self.total_frame >= 1.1:
+        if 85 > self.total_frame >= 1.1:
             self.x -= distance
             if self.x < 300:
                 self.x = 815

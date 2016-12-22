@@ -14,6 +14,7 @@ class Change:
     def __init__(self):
         self.x, self.y = 0, 0
         self.over_y, self.jumping, self.fall, self.y_stop = False, False, False, False
+        self.dead = False
         self.total_frame, self.count, self.count_over = 0.0, 0, 0
         self.y_distance = 0.0
         self.total_frame = 0.0
@@ -27,8 +28,9 @@ class Change:
         distance = Change.RUN_SPEED_PPS * frame_time
         self.total_frame += frame_time
         self.handle_state[self.shape](self)
-        if 85 > self.total_frame >= 1.1:
-            self.x -= distance
+        if self.dead == False:
+            if 85 > self.total_frame >= 1.1:
+                self.x -= distance
 
         if self.over_y == True:
             if self.jumping == True:
@@ -55,6 +57,9 @@ class Change:
             self.image.clip_draw(300, 0, self.wid, self.hei, self.x - 20, self.y, self.rwid, self.rhei)
         elif self.shape == 1:
             self.image.clip_draw(450, 0, self.wid, self.hei, self.x - 20, self.y, self.rwid, self.rhei)
+
+    def death(self):
+        self.dead = True
 
     def draw(self):
         self.image.clip_draw(self.frame, self.state, self.wid, self.hei, self.x, self.y, self.rwid, self.rhei)

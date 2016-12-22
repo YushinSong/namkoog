@@ -580,7 +580,12 @@
     "down008" : {"StartState":"DOWN", "x":16820, "y":600},
     "down_triangle001" : {"StartState":"DOWN_TRIANGLE", "x":16880, "y":540},
     "down009" : {"StartState":"DOWN", "x":16880, "y":600},
-    "down_triangle002" : {"StartState":"DOWN_TRIANGLE", "x":16940, "y":540}
+    "down_triangle002" : {"StartState":"DOWN_TRIANGLE", "x":16940, "y":540},
+    "down010" : {"StartState":"DOWN", "x":16940, "y":600},
+    "down_triangle003" : {"StartState":"DOWN_TRIANGLE", "x":17000, "y":540},
+    "down011" : {"StartState":"DOWN", "x":17000, "y":600},
+    "down012" : {"StartState":"DOWN", "x":17060, "y":600},
+    "down013" : {"StartState":"DOWN", "x":17120, "y":600}
 }
 
 

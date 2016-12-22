@@ -39,5 +39,5 @@ def SideCollide(a, b):
     if right_a < left_b: return False
     if top_a < bottom_b: return False
     if bottom_a > top_b: return False
-    if bottom_b + 18 > top_a > bottom_b:
+    if top_b - 25 > bottom_a and left_b + 25 < right_a:
         return True

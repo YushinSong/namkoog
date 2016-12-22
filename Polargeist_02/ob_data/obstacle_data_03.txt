@@ -561,5 +561,27 @@
     "down152" : {"StartState":"DOWN", "x":48460, "y":600},
     "down153" : {"StartState":"DOWN", "x":48520, "y":600},
     "down154" : {"StartState":"DOWN", "x":48580, "y":600},
-    "down155" : {"StartState":"DOWN", "x":48640, "y":600}
+    "down155" : {"StartState":"DOWN", "x":48640, "y":600},
+
+    "down156" : {"StartState":"DOWN", "x":48700, "y":600},
+    "down157" : {"StartState":"DOWN", "x":48760, "y":600},
+    "down158" : {"StartState":"DOWN", "x":48820, "y":600},
+    "square826" : {"StartState":"SQUARE", "x":48880, "y":198},
+    "square827" : {"StartState":"SQUARE", "x":48880, "y":540},
+    "down159" : {"StartState":"DOWN", "x":48880, "y":600},
+    "non363" : {"StartState":"NONE_WALL", "x":48940, "y":198},
+    "square828" : {"StartState":"SQUARE", "x":48940, "y":258},
+    "square829" : {"StartState":"SQUARE", "x":48940, "y":480},
+    "non364" : {"StartState":"NONE_WALL", "x":48940, "y":540},
+    "down160" : {"StartState":"DOWN", "x":48940, "y":600},
+    "non365" : {"StartState":"NONE_WALL", "x":49000, "y":198},
+    "non366" : {"StartState":"NONE_WALL", "x":49000, "y":258},
+    "non367" : {"StartState":"NONE_WALL", "x":49000, "y":480},
+    "non368" : {"StartState":"NONE_WALL", "x":49000, "y":540},
+    "down161" : {"StartState":"DOWN", "x":49000, "y":600},
+    "non369" : {"StartState":"NONE_WALL", "x":49060, "y":198},
+    "non370" : {"StartState":"NONE_WALL", "x":49060, "y":258},
+    "non371" : {"StartState":"NONE_WALL", "x":49060, "y":480},
+    "non372" : {"StartState":"NONE_WALL", "x":49060, "y":540},
+    "down162" : {"StartState":"DOWN", "x":49060, "y":600}
 }
