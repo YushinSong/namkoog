@@ -1,0 +1,7 @@
+﻿  print.cpp
+c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\chapter03\question02-2\print.cpp(8): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+  02-2.cpp
+  코드를 생성하고 있습니다...
+  Question02-2.vcxproj -> C:\Users\YUSHIN\Documents\2DGPyushin\YuShin\namkoog\C++ selfpractice\Chapter03\Debug\Question02-2.exe
+  Question02-2.vcxproj -> C:\Users\YUSHIN\Documents\2DGPyushin\YuShin\namkoog\C++ selfpractice\Chapter03\Debug\Question02-2.pdb (Full PDB)
