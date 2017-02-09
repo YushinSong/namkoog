@@ -3,7 +3,10 @@
 #include "accountarray.h"
 using namespace std;
 
-BoundCheckAccountPtrArray::BoundCheckAccountPtrArray(int len) : arrlen(len){ }
+BoundCheckAccountPtrArray::BoundCheckAccountPtrArray(int len) : arrlen(len)
+{
+	arr = new ACCOUNT_PTR[len];
+}
 ACCOUNT_PTR& BoundCheckAccountPtrArray::operator[] (int idx)
 {
 	if (idx < 0 || idx >= arrlen)
