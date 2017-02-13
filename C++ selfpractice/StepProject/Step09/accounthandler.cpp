@@ -1,5 +1,7 @@
+#include "BankingCommonDecl.h"
 #include "accounthandler.h"
 #include "highcreditaccount.h"
+#include "string.h"
 #include <iostream>
 using namespace std;
 
@@ -33,7 +35,7 @@ void AccountHandler::MakeAccount()
 void AccountHandler::MakeNormalAccount()
 {
 	int id, money, rate;
-	char name[20];
+	String name;
 
 	cout << "[°èÁÂ°³¼³]" << endl;
 	cout << "°èÁÂID : ";
@@ -51,7 +53,7 @@ void AccountHandler::MakeNormalAccount()
 void AccountHandler::MakeCreditAccount()
 {
 	int id, money, rate, level;
-	char name[20];
+	String name;
 
 	cout << "[°èÁÂ°³¼³]" << endl;
 	cout << "°èÁÂID : ";

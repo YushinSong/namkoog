@@ -61,12 +61,12 @@ String String::operator+ (const String& s)
 	return temp;
 }
 
-ostream& String::operator<< (ostream& os, const String& s)
+ostream& operator<< (ostream& os, const String& s)
 {
 	os << s.str;
 	return os;
 }
-istream& String::operator >> (istream& is, String& s)
+istream& operator>> (istream& is, String& s)
 {
 	char str[100];
 	is >> str;

@@ -8,7 +8,7 @@ class HighCreditAccount : public NormalAccount
 private:
 	int level;
 public:
-	HighCreditAccount::HighCreditAccount(int id, char *name, int _money, int _rate, int _level)
+	HighCreditAccount::HighCreditAccount(int id, String name, int _money, int _rate, int _level)
 		: NormalAccount(id, name, _money, _rate), level(_level) { }
 	void HighCreditAccount::Deposit(int money)
 	{

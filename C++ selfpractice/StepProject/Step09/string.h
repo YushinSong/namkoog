@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <cstring>
-#include "account.h"
+#include "BankingCommonDecl.h"
 
 class String
 {

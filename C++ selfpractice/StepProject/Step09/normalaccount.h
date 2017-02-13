@@ -7,7 +7,7 @@ class NormalAccount : public Account
 private:
 	int rate;
 public:
-	NormalAccount::NormalAccount(int id, char *name, int _money, int _rate)
+	NormalAccount::NormalAccount(int id, String name, int _money, int _rate)
 		: Account(id, name, _money), rate(_rate) { }
 	void NormalAccount::Deposit(int money)
 	{

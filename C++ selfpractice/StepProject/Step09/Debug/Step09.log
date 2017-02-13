@@ -1,12 +1,4 @@
 ﻿  string.cpp
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(23): error C2143: 구문 오류: ';'이(가) '&' 앞에 없습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(23): error C2433: 'ostream': 데이터 선언에 'friend'을(를) 사용할 수 없습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(23): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(23): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(24): error C2143: 구문 오류: ';'이(가) '&' 앞에 없습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(24): error C2433: 'istream': 데이터 선언에 'friend'을(를) 사용할 수 없습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(24): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(24): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
 c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
 c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(20): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -21,24 +13,12 @@ c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
 c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(56): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(64): error C2143: 구문 오류: ';'이(가) '&' 앞에 없습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(64): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(64): error C2086: 'int ostream': 재정의
-  c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(23): note: 'ostream' 선언을 참조하십시오.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(64): error C2039: '<<': 'String'의 멤버가 아닙니다.
-  c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(9): note: 'String' 선언을 참조하십시오.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(64): error C2065: 'os': 선언되지 않은 식별자입니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(64): error C2059: 구문 오류: 'const'
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(65): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(65): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(69): error C2143: 구문 오류: ';'이(가) '&' 앞에 없습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(69): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(69): error C2086: 'int istream': 재정의
-  c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(24): note: 'istream' 선언을 참조하십시오.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(69): error C2039: '>>': 'String'의 멤버가 아닙니다.
-  c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(9): note: 'String' 선언을 참조하십시오.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(69): error C2065: 'is': 선언되지 않은 식별자입니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(69): error C2065: 's': 선언되지 않은 식별자입니다.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(69): error C2275: 'String': 이 형식을 식으로 잘못 사용했습니다.
-  c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.h(9): note: 'String' 선언을 참조하십시오.
-c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step09\string.cpp(70): error C2448: '>>': 함수 스타일 이니셜라이저가 함수 정의처럼 나타납니다.
+  accounthandler.cpp
+  account.cpp
+  09.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  accountarray.cpp
+  코드를 생성하고 있습니다...
+  Step09.vcxproj -> C:\Users\YUSHIN\Documents\2DGPyushin\YuShin\namkoog\C++ selfpractice\StepProject\Debug\Step09.exe
+  Step09.vcxproj -> C:\Users\YUSHIN\Documents\2DGPyushin\YuShin\namkoog\C++ selfpractice\StepProject\Debug\Step09.pdb (Full PDB)

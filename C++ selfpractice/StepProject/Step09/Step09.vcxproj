@@ -152,6 +152,7 @@
     <ClInclude Include="account.h" />
     <ClInclude Include="accountarray.h" />
     <ClInclude Include="accounthandler.h" />
+    <ClInclude Include="BankingCommonDecl.h" />
     <ClInclude Include="highcreditaccount.h" />
     <ClInclude Include="normalaccount.h" />
     <ClInclude Include="string.h" />
