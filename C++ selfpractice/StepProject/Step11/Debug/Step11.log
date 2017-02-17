@@ -1,0 +1,22 @@
+﻿  string.cpp
+c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step11\string.cpp(14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step11\string.cpp(20): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step11\string.cpp(33): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step11\string.cpp(40): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step11\string.cpp(41): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
+c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step11\string.cpp(55): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\yushin\documents\2dgpyushin\yushin\namkoog\c++ selfpractice\stepproject\step11\string.cpp(56): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+  boundcheckarray.cpp
+  accounthandler.cpp
+  account.cpp
+  11.cpp
+  코드를 생성하고 있습니다...
+  Step11.vcxproj -> C:\Users\YUSHIN\Documents\2DGPyushin\YuShin\namkoog\C++ selfpractice\StepProject\Debug\Step11.exe
+  Step11.vcxproj -> C:\Users\YUSHIN\Documents\2DGPyushin\YuShin\namkoog\C++ selfpractice\StepProject\Debug\Step11.pdb (Full PDB)
