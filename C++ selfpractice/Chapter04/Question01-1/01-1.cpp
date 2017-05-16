@@ -4,6 +4,8 @@ using namespace std;
 
 int main()
 {
+	int *num;
+	num = new int(100);
 	FruitSeller seller;
 	seller.InitMembers(1000, 20, 0);
 	FruitBuyer buyer;
@@ -11,6 +13,7 @@ int main()
 	if (!buyer.BuyApples(seller, 2000))
 		cout << "초기화 실패" << endl;
 
+	cout << *num;
 	cout << "과일 판매자의 현황" << endl;
 	seller.ShowSaleResult();
 	cout << "과일 구매자의 현황" << endl;
