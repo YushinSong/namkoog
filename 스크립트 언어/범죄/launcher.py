@@ -4,7 +4,7 @@ from internetbook import *
 
 #### Menu  implementation
 def printMenu():
-    print("\nWelcome! Book Manager Program (xml version)")
+    print("\n범죄 분석 프로그램")
     print("========Menu==========")
     print("Load xml:  l")
     print("Print dom to xml: p")

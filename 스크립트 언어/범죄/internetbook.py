@@ -6,6 +6,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 ##global
 conn = None
 CrimeDoc = None
+CSelect = None
 # regKey = '73ee2bc65b*******8b927fc6cd79a97'
 regKey = 'PGM0C0ZXEQ3U3XV0CURV'
 
@@ -36,11 +37,17 @@ def PrintAYearMenu(year):
     print("범죄발생시간:  t")
     print("범죄발생지역:  a")
     print("범죄자 범행 동기:  mot")
+    print("범죄자 정신 상태:  men")
+    print("범죄자와 피해자와의 관계:  r")
+    print("범죄도구 및 입수방법:  too")
+    print("범죄자 검거단서:  c")
     print("========Menu==========")
 
 def getCrimeDataFromYear(year):
+    global CSelect
     cselect = str(input('사건 선택(살인-1, 성폭행-2) :'))
     PrintAYearMenu(year)
+    CSelect = cselect
     select = str(input('메뉴 선택 :'))
 
     if select == 's':
@@ -53,6 +60,14 @@ def getCrimeDataFromYear(year):
         getAreaData(year, cselect)
     elif select == 'mot':
         getMotivData(year, cselect)
+    elif select == 'men':
+        getMENTALData(year, cselect)
+    elif select == 'r':
+        getRELATIONData(year, cselect)
+    elif select == 'too':
+        getTOOLData(year, cselect)
+    elif select == 'c':
+        getCLUEData(year, cselect)
 
 
 def getSexData(year, crime):
@@ -85,7 +100,7 @@ def getMonthData(year, crime):
     if year != "2014" and year != "2015":
         print("해당 년도의 데이터가 없습니다.")
     else:
-        if crime == '1':    itemcode = "10208"
+        if crime == "1":    itemcode = "10208"
         else:   itemcode = "10211"
         for i in range(5, 17):
             uri = userURIBuilder(server, start="1", end="10", BASE_YEAR=year, STAT_CODE="180", ITEM_CODE1=itemcode,
@@ -153,6 +168,93 @@ def getMotivData(year, crime):
             conn.request("GET", uri)
             getData(year)
 
+def getMENTALData(year, crime):
+    global server, regKey, conn
+    if conn == None:
+        connectOpenAPIServer()
+
+    if year != "2014" and year != "2015":
+       if (crime == "1"): itemcode = "7"
+       else: itemcode = "10"
+       for i in range(7, 25):
+            uri = userURIBuilder(server, start="1", end="500", BASE_YEAR=year,
+                                 STAT_CODE="56", ITEM_CODE1=itemcode, ITEM_CODE2=str(i))
+            conn.request("GET", uri)
+            getData(year)
+    else:
+        if (crime == "1"): itemcode = "10208"
+        else: itemcode = "10211"
+        for i in range(7, 25):
+            uri = userURIBuilder(server, start="1", end="500", BASE_YEAR=year,
+                                STAT_CODE="208", ITEM_CODE1=itemcode, ITEM_CODE2=str(i))
+            conn.request("GET", uri)
+            getData(year)
+
+def getRELATIONData(year, crime):
+    global server, regKey, conn
+    if conn == None:
+        connectOpenAPIServer()
+
+    if year != "2014" and year != "2015":
+        if (crime == '1'): itemcode = "7"
+        else: itemcode = "10"
+        for i in range(5, 19):
+            uri = userURIBuilder(server, start="1", end="500", BASE_YEAR=year,
+                                 STAT_CODE="53", ITEM_CODE1=itemcode, ITEM_CODE2=str(i))
+            conn.request("GET", uri)
+            getData(year)
+    else:
+        if (crime == '1'): itemcode = "10208"
+        else: itemcode = "10211"
+        for i in range(5, 19):
+          uri = userURIBuilder(server, start="1", end="500", BASE_YEAR=year,
+                               STAT_CODE="229", ITEM_CODE1=itemcode, ITEM_CODE2=str(i))
+          conn.request("GET", uri)
+          getData(year)
+
+def getTOOLData(year, crime):
+    global server, regKey, conn
+    if conn == None:
+        connectOpenAPIServer()
+
+    if year != "2014" and year != "2015":
+        for r in range(420, 427):
+            for i in range(5, 19):
+                uri = userURIBuilder(server, start="1", end="500", BASE_YEAR=year,
+                                     STAT_CODE="36", ITEM_CODE1=str(r), ITEM_CODE2=str(i))
+                conn.request("GET", uri)
+                getData(year)
+    else:
+        for r in range(420, 427):
+            for i in range(5, 19):
+                uri = userURIBuilder(server, start="1", end="500", BASE_YEAR=year,
+                                     STAT_CODE="190", ITEM_CODE1=str(r), ITEM_CODE2=str(i))
+                conn.request("GET", uri)
+                getData(year)
+
+def getCLUEData(year, crime):
+    global server, regKey, conn
+    if conn == None:
+        connectOpenAPIServer()
+
+    if year != "2014" and year != "2015":
+        if(crime == "1"): itemcode = "7"
+        else: itemcode = "10"
+        for i in range(5, 27):
+            uri = userURIBuilder(server, start="1", end="500", BASE_YEAR=year,
+                                 STAT_CODE="40", ITEM_CODE1=itemcode, ITEM_CODE2=str(i))
+            conn.request("GET", uri)
+            getData(year)
+    else:
+        if(crime == "1"): itemcode = "10208"
+        else: itemcode = "10211"
+        for i in range(5, 27):
+            uri = userURIBuilder(server, start="1", end="500", BASE_YEAR=year,
+                                 STAT_CODE="172", ITEM_CODE1=itemcode, ITEM_CODE2=str(i))
+            conn.request("GET", uri)
+            getData(year)
+
+
 def getData(year):
     global CrimeDoc
     req = conn.getresponse()
@@ -167,7 +269,7 @@ def getData(year):
 
 
 def PrintSearchData():
-    global CrimeDoc
+    global CrimeDoc, CSelect
 
     parseData = parseString(CrimeDoc)
     GeoInfoLibrary = parseData.childNodes
@@ -181,6 +283,8 @@ def PrintSearchData():
             print("==========================================")
             if subitems[1].firstChild is not None:
                 print("<", subitems[1].firstChild.nodeValue, "년도>  ", sep="", end="");
+                if CSelect == '1' : print("<살인>")
+                else: print("<성폭행>")
             if subitems[5].firstChild is not None:
                 print(subitems[5].firstChild.nodeValue, " - ", sep="", end="");
             if subitems[13].firstChild is not None:
